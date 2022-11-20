@@ -1,0 +1,82 @@
+﻿<Window x:Class="WPFUIKitProfessional.Windws.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUIKitProfessional.Windws"
+        mc:Ignorable="d"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Height="450" Width="800"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Registration">
+    <Border CornerRadius="10" Background="#0E1A32">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="AUTONTURE AVISION" 
+                       FontSize="50" FontWeight="Bold" 
+                       Foreground="#EDF4FF" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+            <StackPanel Grid.Row="1">
+                <Grid Height="350">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Grid Height="350">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="#EDF4FF" Text="Registration" Grid.Row="0"/>
+                            <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0,25,0,0" HorizontalAlignment="Center">
+                                <TextBox
+                     FontSize="15"
+                     x:Name="txtLogin"
+                     Foreground="#EDF4FF"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="Login" Width="220"/>
+                                <TextBox
+                     FontSize="15"
+                     x:Name="txtName"
+                     Foreground="#EDF4FF"
+                     Margin="0,15,0,15"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="Name" Width="220"/>
+                                <PasswordBox
+                     FontSize="15"
+                     x:Name="txtPassword"
+                     Foreground="#EDF4FF"
+                     Margin="0,0,0,15"
+                     Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                     material:HintAssist.Hint="Password" Width="220"/>
+
+                                <Button 
+                     x:Name="btnRegistration"
+                     Click="btnRegistration_Click"
+                     Foreground="{StaticResource SecundaryWhiteColor}" 
+                     material:ButtonAssist.CornerRadius="5"
+                     Background="#772250"
+                     Width="220"
+                     Content="Enter"
+                     Height="40"/>
+                                <TextBlock
+                     x:Name="txtAuth"
+                     MouseLeftButtonDown="txtAuth_MouseLeftButtonDown"
+                     Text="Sign In Here!" Foreground="#EDF4FF" HorizontalAlignment="Right" Margin="0,5,0,0" FontSize="15" FontWeight="Medium"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <Image Grid.Column="1" Source="/Resources/backimg2.png" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="HighQuality"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
