@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFUIKitProfessional.Data.DBClasses;
 
 namespace WPFUIKitProfessional.Windws
 {
@@ -53,7 +54,19 @@ namespace WPFUIKitProfessional.Windws
             }
             else
             {
-
+                if (DBMethodsFromClient.IsCorrectUser(txtLogin.Text, txtPassword.Password))
+                {
+                    MainWindow main = new MainWindow(DBMethodsFromClient.Account);
+                    MessageBox.Show($"Welcome: {DBMethodsFromClient.Account.Name}");
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("incorrect data");
+                    return;
+                }
+                
             }
         }
     }

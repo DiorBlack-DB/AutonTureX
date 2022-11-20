@@ -1,0 +1,1330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище AutonTechModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Surname" Type="nvarchar(max)" />
+          <Property Name="idAuth" Type="int" />
+          <Property Name="Image" Type="image" />
+        </EntityType>
+        <EntityType Name="Astronaut">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_of_birth" Type="date" Nullable="false" />
+          <Property Name="date_of_death" Type="date" />
+          <Property Name="nationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="bio" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_flight" Type="nvarchar" MaxLength="50" />
+          <Property Name="first_flight" Type="nvarchar" MaxLength="50" />
+          <Property Name="flights_count" Type="int" Nullable="false" />
+          <Property Name="profile_image" Type="image" />
+        </EntityType>
+        <EntityType Name="AstronautFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+          <Property Name="idAstronaut" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="location" Type="nvarchar(max)" />
+          <Property Name="feature_image" Type="image" />
+          <Property Name="date" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="webcast_live" Type="bit" />
+        </EntityType>
+        <EntityType Name="EventFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEvent" Type="int" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImageDateFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idImage" Type="int" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImageGetter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="nvarchar" MaxLength="50" />
+          <Property Name="image" Type="image" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="media_type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ImageRoadster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flickr_images1" Type="image" />
+          <Property Name="flickr_images2" Type="image" />
+          <Property Name="flickr_images3" Type="image" />
+          <Property Name="flickr_images4" Type="image" />
+          <Property Name="flickr_images5" Type="image" />
+        </EntityType>
+        <EntityType Name="imageRocketsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flickr_images1" Type="image" />
+          <Property Name="flickr_images2" Type="image" />
+        </EntityType>
+        <EntityType Name="ImageShipsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image1" Type="image" />
+          <Property Name="image2" Type="image" />
+          <Property Name="image3" Type="image" />
+        </EntityType>
+        <EntityType Name="MarsRover">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SolDay" Type="int" />
+          <Property Name="earth_date" Type="date" />
+          <Property Name="img_src" Type="image" />
+        </EntityType>
+        <EntityType Name="Roadster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="launch_date_utc" Type="datetime" Nullable="false" />
+          <Property Name="launch_date_unix" Type="int" Nullable="false" />
+          <Property Name="launch_mass_kg" Type="int" Nullable="false" />
+          <Property Name="period_days" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mars_distance_km" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idImage" Type="int" />
+          <Property Name="details" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RoadsterFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRoadster" Type="int" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RocketsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="active" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cost_per_launch" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="first_flight" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HeightMeters" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DiameterMeters" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mass" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="boosters" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="engines" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idImage" Type="int" />
+        </EntityType>
+        <EntityType Name="RocketsXFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRockets" Type="int" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoverFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRover" Type="int" />
+          <Property Name="idClient" Type="int" />
+        </EntityType>
+        <EntityType Name="ShipsFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idShips" Type="int" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShipsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ship_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ship_model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ship_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
+          <Property Name="weight_kg" Type="int" />
+          <Property Name="year_built" Type="int" />
+          <Property Name="idImage" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Account_Authorization">
+          <End Role="Authorization" Type="Self.Authorization" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorization">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idAuth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AstronautFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="AstronautFavorite" Type="Self.AstronautFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AstronautFavorite">
+              <PropertyRef Name="idAstronaut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AstronautFavorite_Astronaut">
+          <End Role="Astronaut" Type="Self.Astronaut" Multiplicity="1" />
+          <End Role="AstronautFavorite" Type="Self.AstronautFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Astronaut">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AstronautFavorite">
+              <PropertyRef Name="idAstronaut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="EventFavorite" Type="Self.EventFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EventFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventFavorite_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventFavorite" Type="Self.EventFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EventFavorite">
+              <PropertyRef Name="idEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageDateFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="ImageDateFavorite" Type="Self.ImageDateFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ImageDateFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageDateFavorite_ImageGetter">
+          <End Role="ImageGetter" Type="Self.ImageGetter" Multiplicity="1" />
+          <End Role="ImageDateFavorite" Type="Self.ImageDateFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageGetter">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ImageDateFavorite">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Roadster_ImageRoadster">
+          <End Role="ImageRoadster" Type="Self.ImageRoadster" Multiplicity="0..1" />
+          <End Role="Roadster" Type="Self.Roadster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageRoadster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Roadster">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoadsterFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="RoadsterFavorite" Type="Self.RoadsterFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoadsterFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoadsterFavorite_Roadster">
+          <End Role="Roadster" Type="Self.Roadster" Multiplicity="1" />
+          <End Role="RoadsterFavorite" Type="Self.RoadsterFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roadster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoadsterFavorite">
+              <PropertyRef Name="idRoadster" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RocketsX_imageRocketsX">
+          <End Role="imageRocketsX" Type="Self.imageRocketsX" Multiplicity="0..1" />
+          <End Role="RocketsX" Type="Self.RocketsX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imageRocketsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RocketsX">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RocketsXFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="RocketsXFavorite" Type="Self.RocketsXFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RocketsXFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RocketsXFavorite_RocketsX">
+          <End Role="RocketsX" Type="Self.RocketsX" Multiplicity="1" />
+          <End Role="RocketsXFavorite" Type="Self.RocketsXFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RocketsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RocketsXFavorite">
+              <PropertyRef Name="idRockets" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoverFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="RoverFavorite" Type="Self.RoverFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoverFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoverFavorite_MarsRover">
+          <End Role="MarsRover" Type="Self.MarsRover" Multiplicity="0..1" />
+          <End Role="RoverFavorite" Type="Self.RoverFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MarsRover">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoverFavorite">
+              <PropertyRef Name="idRover" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipsFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="ShipsFavorite" Type="Self.ShipsFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShipsFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipsFavorite_ShipsX">
+          <End Role="ShipsX" Type="Self.ShipsX" Multiplicity="1" />
+          <End Role="ShipsFavorite" Type="Self.ShipsFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShipsFavorite">
+              <PropertyRef Name="idShips" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipsX_ImageShipsX">
+          <End Role="ImageShipsX" Type="Self.ImageShipsX" Multiplicity="0..1" />
+          <End Role="ShipsX" Type="Self.ShipsX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageShipsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShipsX">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище AutonTechModelContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Astronaut" EntityType="Self.Astronaut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AstronautFavorite" EntityType="Self.AstronautFavorite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Authorization" EntityType="Self.Authorization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventFavorite" EntityType="Self.EventFavorite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageDateFavorite" EntityType="Self.ImageDateFavorite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageGetter" EntityType="Self.ImageGetter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageRoadster" EntityType="Self.ImageRoadster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="imageRocketsX" EntityType="Self.imageRocketsX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageShipsX" EntityType="Self.ImageShipsX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MarsRover" EntityType="Self.MarsRover" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roadster" EntityType="Self.Roadster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoadsterFavorite" EntityType="Self.RoadsterFavorite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RocketsX" EntityType="Self.RocketsX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RocketsXFavorite" EntityType="Self.RocketsXFavorite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoverFavorite" EntityType="Self.RoverFavorite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShipsFavorite" EntityType="Self.ShipsFavorite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShipsX" EntityType="Self.ShipsX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Account_Authorization" Association="Self.FK_Account_Authorization">
+            <End Role="Authorization" EntitySet="Authorization" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AstronautFavorite_Account" Association="Self.FK_AstronautFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="AstronautFavorite" EntitySet="AstronautFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AstronautFavorite_Astronaut" Association="Self.FK_AstronautFavorite_Astronaut">
+            <End Role="Astronaut" EntitySet="Astronaut" />
+            <End Role="AstronautFavorite" EntitySet="AstronautFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventFavorite_Account" Association="Self.FK_EventFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="EventFavorite" EntitySet="EventFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventFavorite_Event" Association="Self.FK_EventFavorite_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventFavorite" EntitySet="EventFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageDateFavorite_Account" Association="Self.FK_ImageDateFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="ImageDateFavorite" EntitySet="ImageDateFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageDateFavorite_ImageGetter" Association="Self.FK_ImageDateFavorite_ImageGetter">
+            <End Role="ImageGetter" EntitySet="ImageGetter" />
+            <End Role="ImageDateFavorite" EntitySet="ImageDateFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Roadster_ImageRoadster" Association="Self.FK_Roadster_ImageRoadster">
+            <End Role="ImageRoadster" EntitySet="ImageRoadster" />
+            <End Role="Roadster" EntitySet="Roadster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoadsterFavorite_Account" Association="Self.FK_RoadsterFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="RoadsterFavorite" EntitySet="RoadsterFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoadsterFavorite_Roadster" Association="Self.FK_RoadsterFavorite_Roadster">
+            <End Role="Roadster" EntitySet="Roadster" />
+            <End Role="RoadsterFavorite" EntitySet="RoadsterFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RocketsX_imageRocketsX" Association="Self.FK_RocketsX_imageRocketsX">
+            <End Role="imageRocketsX" EntitySet="imageRocketsX" />
+            <End Role="RocketsX" EntitySet="RocketsX" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RocketsXFavorite_Account" Association="Self.FK_RocketsXFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="RocketsXFavorite" EntitySet="RocketsXFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RocketsXFavorite_RocketsX" Association="Self.FK_RocketsXFavorite_RocketsX">
+            <End Role="RocketsX" EntitySet="RocketsX" />
+            <End Role="RocketsXFavorite" EntitySet="RocketsXFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoverFavorite_Account" Association="Self.FK_RoverFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="RoverFavorite" EntitySet="RoverFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoverFavorite_MarsRover" Association="Self.FK_RoverFavorite_MarsRover">
+            <End Role="MarsRover" EntitySet="MarsRover" />
+            <End Role="RoverFavorite" EntitySet="RoverFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipsFavorite_Account" Association="Self.FK_ShipsFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="ShipsFavorite" EntitySet="ShipsFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipsFavorite_ShipsX" Association="Self.FK_ShipsFavorite_ShipsX">
+            <End Role="ShipsX" EntitySet="ShipsX" />
+            <End Role="ShipsFavorite" EntitySet="ShipsFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipsX_ImageShipsX" Association="Self.FK_ShipsX_ImageShipsX">
+            <End Role="ImageShipsX" EntitySet="ImageShipsX" />
+            <End Role="ShipsX" EntitySet="ShipsX" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutonTechModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idAuth" Type="Int32" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Authorization" Relationship="Self.FK_Account_Authorization" FromRole="Account" ToRole="Authorization" />
+          <NavigationProperty Name="AstronautFavorite" Relationship="Self.FK_AstronautFavorite_Account" FromRole="Account" ToRole="AstronautFavorite" />
+          <NavigationProperty Name="EventFavorite" Relationship="Self.FK_EventFavorite_Account" FromRole="Account" ToRole="EventFavorite" />
+          <NavigationProperty Name="ImageDateFavorite" Relationship="Self.FK_ImageDateFavorite_Account" FromRole="Account" ToRole="ImageDateFavorite" />
+          <NavigationProperty Name="RoadsterFavorite" Relationship="Self.FK_RoadsterFavorite_Account" FromRole="Account" ToRole="RoadsterFavorite" />
+          <NavigationProperty Name="RocketsXFavorite" Relationship="Self.FK_RocketsXFavorite_Account" FromRole="Account" ToRole="RocketsXFavorite" />
+          <NavigationProperty Name="RoverFavorite" Relationship="Self.FK_RoverFavorite_Account" FromRole="Account" ToRole="RoverFavorite" />
+          <NavigationProperty Name="ShipsFavorite" Relationship="Self.FK_ShipsFavorite_Account" FromRole="Account" ToRole="ShipsFavorite" />
+        </EntityType>
+        <EntityType Name="Astronaut">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_of_birth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_of_death" Type="DateTime" Precision="0" />
+          <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="last_flight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="first_flight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flights_count" Type="Int32" Nullable="false" />
+          <Property Name="profile_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="AstronautFavorite" Relationship="Self.FK_AstronautFavorite_Astronaut" FromRole="Astronaut" ToRole="AstronautFavorite" />
+        </EntityType>
+        <EntityType Name="AstronautFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <Property Name="idAstronaut" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_AstronautFavorite_Account" FromRole="AstronautFavorite" ToRole="Account" />
+          <NavigationProperty Name="Astronaut" Relationship="Self.FK_AstronautFavorite_Astronaut" FromRole="AstronautFavorite" ToRole="Astronaut" />
+        </EntityType>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_Account_Authorization" FromRole="Authorization" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="feature_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="webcast_live" Type="Boolean" />
+          <NavigationProperty Name="EventFavorite" Relationship="Self.FK_EventFavorite_Event" FromRole="Event" ToRole="EventFavorite" />
+        </EntityType>
+        <EntityType Name="EventFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEvent" Type="Int32" Nullable="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_EventFavorite_Account" FromRole="EventFavorite" ToRole="Account" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_EventFavorite_Event" FromRole="EventFavorite" ToRole="Event" />
+        </EntityType>
+        <EntityType Name="ImageDateFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idImage" Type="Int32" Nullable="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_ImageDateFavorite_Account" FromRole="ImageDateFavorite" ToRole="Account" />
+          <NavigationProperty Name="ImageGetter" Relationship="Self.FK_ImageDateFavorite_ImageGetter" FromRole="ImageDateFavorite" ToRole="ImageGetter" />
+        </EntityType>
+        <EntityType Name="ImageGetter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="media_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ImageDateFavorite" Relationship="Self.FK_ImageDateFavorite_ImageGetter" FromRole="ImageGetter" ToRole="ImageDateFavorite" />
+        </EntityType>
+        <EntityType Name="ImageRoadster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flickr_images1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="flickr_images2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="flickr_images3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="flickr_images4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="flickr_images5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Roadster" Relationship="Self.FK_Roadster_ImageRoadster" FromRole="ImageRoadster" ToRole="Roadster" />
+        </EntityType>
+        <EntityType Name="imageRocketsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flickr_images1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="flickr_images2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="RocketsX" Relationship="Self.FK_RocketsX_imageRocketsX" FromRole="imageRocketsX" ToRole="RocketsX" />
+        </EntityType>
+        <EntityType Name="ImageShipsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="image2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="image3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="ShipsX" Relationship="Self.FK_ShipsX_ImageShipsX" FromRole="ImageShipsX" ToRole="ShipsX" />
+        </EntityType>
+        <EntityType Name="MarsRover">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SolDay" Type="Int32" />
+          <Property Name="earth_date" Type="DateTime" Precision="0" />
+          <Property Name="img_src" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="RoverFavorite" Relationship="Self.FK_RoverFavorite_MarsRover" FromRole="MarsRover" ToRole="RoverFavorite" />
+        </EntityType>
+        <EntityType Name="Roadster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="launch_date_utc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="launch_date_unix" Type="Int32" Nullable="false" />
+          <Property Name="launch_mass_kg" Type="Int32" Nullable="false" />
+          <Property Name="period_days" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mars_distance_km" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idImage" Type="Int32" />
+          <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ImageRoadster" Relationship="Self.FK_Roadster_ImageRoadster" FromRole="Roadster" ToRole="ImageRoadster" />
+          <NavigationProperty Name="RoadsterFavorite" Relationship="Self.FK_RoadsterFavorite_Roadster" FromRole="Roadster" ToRole="RoadsterFavorite" />
+        </EntityType>
+        <EntityType Name="RoadsterFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRoadster" Type="Int32" Nullable="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_RoadsterFavorite_Account" FromRole="RoadsterFavorite" ToRole="Account" />
+          <NavigationProperty Name="Roadster" Relationship="Self.FK_RoadsterFavorite_Roadster" FromRole="RoadsterFavorite" ToRole="Roadster" />
+        </EntityType>
+        <EntityType Name="RocketsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="active" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cost_per_launch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="first_flight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HeightMeters" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DiameterMeters" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="boosters" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="engines" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idImage" Type="Int32" />
+          <NavigationProperty Name="imageRocketsX" Relationship="Self.FK_RocketsX_imageRocketsX" FromRole="RocketsX" ToRole="imageRocketsX" />
+          <NavigationProperty Name="RocketsXFavorite" Relationship="Self.FK_RocketsXFavorite_RocketsX" FromRole="RocketsX" ToRole="RocketsXFavorite" />
+        </EntityType>
+        <EntityType Name="RocketsXFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRockets" Type="Int32" Nullable="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_RocketsXFavorite_Account" FromRole="RocketsXFavorite" ToRole="Account" />
+          <NavigationProperty Name="RocketsX" Relationship="Self.FK_RocketsXFavorite_RocketsX" FromRole="RocketsXFavorite" ToRole="RocketsX" />
+        </EntityType>
+        <EntityType Name="RoverFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRover" Type="Int32" />
+          <Property Name="idClient" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_RoverFavorite_Account" FromRole="RoverFavorite" ToRole="Account" />
+          <NavigationProperty Name="MarsRover" Relationship="Self.FK_RoverFavorite_MarsRover" FromRole="RoverFavorite" ToRole="MarsRover" />
+        </EntityType>
+        <EntityType Name="ShipsFavorite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idShips" Type="Int32" Nullable="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_ShipsFavorite_Account" FromRole="ShipsFavorite" ToRole="Account" />
+          <NavigationProperty Name="ShipsX" Relationship="Self.FK_ShipsFavorite_ShipsX" FromRole="ShipsFavorite" ToRole="ShipsX" />
+        </EntityType>
+        <EntityType Name="ShipsX">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ship_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ship_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ship_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <Property Name="weight_kg" Type="Int32" />
+          <Property Name="year_built" Type="Int32" />
+          <Property Name="idImage" Type="Int32" />
+          <NavigationProperty Name="ImageShipsX" Relationship="Self.FK_ShipsX_ImageShipsX" FromRole="ShipsX" ToRole="ImageShipsX" />
+          <NavigationProperty Name="ShipsFavorite" Relationship="Self.FK_ShipsFavorite_ShipsX" FromRole="ShipsX" ToRole="ShipsFavorite" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Account_Authorization">
+          <End Role="Authorization" Type="Self.Authorization" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authorization">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idAuth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AstronautFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="AstronautFavorite" Type="Self.AstronautFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AstronautFavorite">
+              <PropertyRef Name="idAstronaut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="EventFavorite" Type="Self.EventFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EventFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageDateFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="ImageDateFavorite" Type="Self.ImageDateFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ImageDateFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoadsterFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="RoadsterFavorite" Type="Self.RoadsterFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoadsterFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RocketsXFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="RocketsXFavorite" Type="Self.RocketsXFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RocketsXFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoverFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="RoverFavorite" Type="Self.RoverFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoverFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipsFavorite_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="ShipsFavorite" Type="Self.ShipsFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShipsFavorite">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AstronautFavorite_Astronaut">
+          <End Role="Astronaut" Type="Self.Astronaut" Multiplicity="1" />
+          <End Role="AstronautFavorite" Type="Self.AstronautFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Astronaut">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AstronautFavorite">
+              <PropertyRef Name="idAstronaut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventFavorite_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventFavorite" Type="Self.EventFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EventFavorite">
+              <PropertyRef Name="idEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageDateFavorite_ImageGetter">
+          <End Role="ImageGetter" Type="Self.ImageGetter" Multiplicity="1" />
+          <End Role="ImageDateFavorite" Type="Self.ImageDateFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageGetter">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ImageDateFavorite">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Roadster_ImageRoadster">
+          <End Role="ImageRoadster" Type="Self.ImageRoadster" Multiplicity="0..1" />
+          <End Role="Roadster" Type="Self.Roadster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageRoadster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Roadster">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RocketsX_imageRocketsX">
+          <End Role="imageRocketsX" Type="Self.imageRocketsX" Multiplicity="0..1" />
+          <End Role="RocketsX" Type="Self.RocketsX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imageRocketsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RocketsX">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipsX_ImageShipsX">
+          <End Role="ImageShipsX" Type="Self.ImageShipsX" Multiplicity="0..1" />
+          <End Role="ShipsX" Type="Self.ShipsX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageShipsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShipsX">
+              <PropertyRef Name="idImage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoverFavorite_MarsRover">
+          <End Role="MarsRover" Type="Self.MarsRover" Multiplicity="0..1" />
+          <End Role="RoverFavorite" Type="Self.RoverFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MarsRover">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoverFavorite">
+              <PropertyRef Name="idRover" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoadsterFavorite_Roadster">
+          <End Role="Roadster" Type="Self.Roadster" Multiplicity="1" />
+          <End Role="RoadsterFavorite" Type="Self.RoadsterFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roadster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoadsterFavorite">
+              <PropertyRef Name="idRoadster" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RocketsXFavorite_RocketsX">
+          <End Role="RocketsX" Type="Self.RocketsX" Multiplicity="1" />
+          <End Role="RocketsXFavorite" Type="Self.RocketsXFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RocketsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RocketsXFavorite">
+              <PropertyRef Name="idRockets" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipsFavorite_ShipsX">
+          <End Role="ShipsX" Type="Self.ShipsX" Multiplicity="1" />
+          <End Role="ShipsFavorite" Type="Self.ShipsFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipsX">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShipsFavorite">
+              <PropertyRef Name="idShips" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AutonTechEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="Self.Account" />
+          <EntitySet Name="Astronaut" EntityType="Self.Astronaut" />
+          <EntitySet Name="AstronautFavorite" EntityType="Self.AstronautFavorite" />
+          <EntitySet Name="Authorization" EntityType="Self.Authorization" />
+          <EntitySet Name="Event" EntityType="Self.Event" />
+          <EntitySet Name="EventFavorite" EntityType="Self.EventFavorite" />
+          <EntitySet Name="ImageDateFavorite" EntityType="Self.ImageDateFavorite" />
+          <EntitySet Name="ImageGetter" EntityType="Self.ImageGetter" />
+          <EntitySet Name="ImageRoadster" EntityType="Self.ImageRoadster" />
+          <EntitySet Name="imageRocketsX" EntityType="Self.imageRocketsX" />
+          <EntitySet Name="ImageShipsX" EntityType="Self.ImageShipsX" />
+          <EntitySet Name="MarsRover" EntityType="Self.MarsRover" />
+          <EntitySet Name="Roadster" EntityType="Self.Roadster" />
+          <EntitySet Name="RoadsterFavorite" EntityType="Self.RoadsterFavorite" />
+          <EntitySet Name="RocketsX" EntityType="Self.RocketsX" />
+          <EntitySet Name="RocketsXFavorite" EntityType="Self.RocketsXFavorite" />
+          <EntitySet Name="RoverFavorite" EntityType="Self.RoverFavorite" />
+          <EntitySet Name="ShipsFavorite" EntityType="Self.ShipsFavorite" />
+          <EntitySet Name="ShipsX" EntityType="Self.ShipsX" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Account_Authorization" Association="Self.FK_Account_Authorization">
+            <End Role="Authorization" EntitySet="Authorization" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AstronautFavorite_Account" Association="Self.FK_AstronautFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="AstronautFavorite" EntitySet="AstronautFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventFavorite_Account" Association="Self.FK_EventFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="EventFavorite" EntitySet="EventFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageDateFavorite_Account" Association="Self.FK_ImageDateFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="ImageDateFavorite" EntitySet="ImageDateFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoadsterFavorite_Account" Association="Self.FK_RoadsterFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="RoadsterFavorite" EntitySet="RoadsterFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RocketsXFavorite_Account" Association="Self.FK_RocketsXFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="RocketsXFavorite" EntitySet="RocketsXFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoverFavorite_Account" Association="Self.FK_RoverFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="RoverFavorite" EntitySet="RoverFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipsFavorite_Account" Association="Self.FK_ShipsFavorite_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="ShipsFavorite" EntitySet="ShipsFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AstronautFavorite_Astronaut" Association="Self.FK_AstronautFavorite_Astronaut">
+            <End Role="Astronaut" EntitySet="Astronaut" />
+            <End Role="AstronautFavorite" EntitySet="AstronautFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventFavorite_Event" Association="Self.FK_EventFavorite_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventFavorite" EntitySet="EventFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageDateFavorite_ImageGetter" Association="Self.FK_ImageDateFavorite_ImageGetter">
+            <End Role="ImageGetter" EntitySet="ImageGetter" />
+            <End Role="ImageDateFavorite" EntitySet="ImageDateFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Roadster_ImageRoadster" Association="Self.FK_Roadster_ImageRoadster">
+            <End Role="ImageRoadster" EntitySet="ImageRoadster" />
+            <End Role="Roadster" EntitySet="Roadster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RocketsX_imageRocketsX" Association="Self.FK_RocketsX_imageRocketsX">
+            <End Role="imageRocketsX" EntitySet="imageRocketsX" />
+            <End Role="RocketsX" EntitySet="RocketsX" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipsX_ImageShipsX" Association="Self.FK_ShipsX_ImageShipsX">
+            <End Role="ImageShipsX" EntitySet="ImageShipsX" />
+            <End Role="ShipsX" EntitySet="ShipsX" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoverFavorite_MarsRover" Association="Self.FK_RoverFavorite_MarsRover">
+            <End Role="MarsRover" EntitySet="MarsRover" />
+            <End Role="RoverFavorite" EntitySet="RoverFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoadsterFavorite_Roadster" Association="Self.FK_RoadsterFavorite_Roadster">
+            <End Role="Roadster" EntitySet="Roadster" />
+            <End Role="RoadsterFavorite" EntitySet="RoadsterFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RocketsXFavorite_RocketsX" Association="Self.FK_RocketsXFavorite_RocketsX">
+            <End Role="RocketsX" EntitySet="RocketsX" />
+            <End Role="RocketsXFavorite" EntitySet="RocketsXFavorite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipsFavorite_ShipsX" Association="Self.FK_ShipsFavorite_ShipsX">
+            <End Role="ShipsX" EntitySet="ShipsX" />
+            <End Role="ShipsFavorite" EntitySet="ShipsFavorite" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AutonTechModelContainer" CdmEntityContainer="AutonTechEntities">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="AutonTechModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="idAuth" ColumnName="idAuth" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Astronaut">
+            <EntityTypeMapping TypeName="AutonTechModel.Astronaut">
+              <MappingFragment StoreEntitySet="Astronaut">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+                <ScalarProperty Name="date_of_death" ColumnName="date_of_death" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="bio" ColumnName="bio" />
+                <ScalarProperty Name="last_flight" ColumnName="last_flight" />
+                <ScalarProperty Name="first_flight" ColumnName="first_flight" />
+                <ScalarProperty Name="flights_count" ColumnName="flights_count" />
+                <ScalarProperty Name="profile_image" ColumnName="profile_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AstronautFavorite">
+            <EntityTypeMapping TypeName="AutonTechModel.AstronautFavorite">
+              <MappingFragment StoreEntitySet="AstronautFavorite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+                <ScalarProperty Name="idAstronaut" ColumnName="idAstronaut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authorization">
+            <EntityTypeMapping TypeName="AutonTechModel.Authorization">
+              <MappingFragment StoreEntitySet="Authorization">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event">
+            <EntityTypeMapping TypeName="AutonTechModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="feature_image" ColumnName="feature_image" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="webcast_live" ColumnName="webcast_live" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventFavorite">
+            <EntityTypeMapping TypeName="AutonTechModel.EventFavorite">
+              <MappingFragment StoreEntitySet="EventFavorite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idEvent" ColumnName="idEvent" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageDateFavorite">
+            <EntityTypeMapping TypeName="AutonTechModel.ImageDateFavorite">
+              <MappingFragment StoreEntitySet="ImageDateFavorite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idImage" ColumnName="idImage" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageGetter">
+            <EntityTypeMapping TypeName="AutonTechModel.ImageGetter">
+              <MappingFragment StoreEntitySet="ImageGetter">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="media_type" ColumnName="media_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageRoadster">
+            <EntityTypeMapping TypeName="AutonTechModel.ImageRoadster">
+              <MappingFragment StoreEntitySet="ImageRoadster">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flickr_images1" ColumnName="flickr_images1" />
+                <ScalarProperty Name="flickr_images2" ColumnName="flickr_images2" />
+                <ScalarProperty Name="flickr_images3" ColumnName="flickr_images3" />
+                <ScalarProperty Name="flickr_images4" ColumnName="flickr_images4" />
+                <ScalarProperty Name="flickr_images5" ColumnName="flickr_images5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="imageRocketsX">
+            <EntityTypeMapping TypeName="AutonTechModel.imageRocketsX">
+              <MappingFragment StoreEntitySet="imageRocketsX">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flickr_images1" ColumnName="flickr_images1" />
+                <ScalarProperty Name="flickr_images2" ColumnName="flickr_images2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageShipsX">
+            <EntityTypeMapping TypeName="AutonTechModel.ImageShipsX">
+              <MappingFragment StoreEntitySet="ImageShipsX">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="image1" ColumnName="image1" />
+                <ScalarProperty Name="image2" ColumnName="image2" />
+                <ScalarProperty Name="image3" ColumnName="image3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarsRover">
+            <EntityTypeMapping TypeName="AutonTechModel.MarsRover">
+              <MappingFragment StoreEntitySet="MarsRover">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="SolDay" ColumnName="SolDay" />
+                <ScalarProperty Name="earth_date" ColumnName="earth_date" />
+                <ScalarProperty Name="img_src" ColumnName="img_src" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roadster">
+            <EntityTypeMapping TypeName="AutonTechModel.Roadster">
+              <MappingFragment StoreEntitySet="Roadster">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="launch_date_utc" ColumnName="launch_date_utc" />
+                <ScalarProperty Name="launch_date_unix" ColumnName="launch_date_unix" />
+                <ScalarProperty Name="launch_mass_kg" ColumnName="launch_mass_kg" />
+                <ScalarProperty Name="period_days" ColumnName="period_days" />
+                <ScalarProperty Name="mars_distance_km" ColumnName="mars_distance_km" />
+                <ScalarProperty Name="idImage" ColumnName="idImage" />
+                <ScalarProperty Name="details" ColumnName="details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoadsterFavorite">
+            <EntityTypeMapping TypeName="AutonTechModel.RoadsterFavorite">
+              <MappingFragment StoreEntitySet="RoadsterFavorite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idRoadster" ColumnName="idRoadster" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RocketsX">
+            <EntityTypeMapping TypeName="AutonTechModel.RocketsX">
+              <MappingFragment StoreEntitySet="RocketsX">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="cost_per_launch" ColumnName="cost_per_launch" />
+                <ScalarProperty Name="first_flight" ColumnName="first_flight" />
+                <ScalarProperty Name="HeightMeters" ColumnName="HeightMeters" />
+                <ScalarProperty Name="DiameterMeters" ColumnName="DiameterMeters" />
+                <ScalarProperty Name="mass" ColumnName="mass" />
+                <ScalarProperty Name="boosters" ColumnName="boosters" />
+                <ScalarProperty Name="engines" ColumnName="engines" />
+                <ScalarProperty Name="idImage" ColumnName="idImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RocketsXFavorite">
+            <EntityTypeMapping TypeName="AutonTechModel.RocketsXFavorite">
+              <MappingFragment StoreEntitySet="RocketsXFavorite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idRockets" ColumnName="idRockets" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoverFavorite">
+            <EntityTypeMapping TypeName="AutonTechModel.RoverFavorite">
+              <MappingFragment StoreEntitySet="RoverFavorite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idRover" ColumnName="idRover" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShipsFavorite">
+            <EntityTypeMapping TypeName="AutonTechModel.ShipsFavorite">
+              <MappingFragment StoreEntitySet="ShipsFavorite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idShips" ColumnName="idShips" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShipsX">
+            <EntityTypeMapping TypeName="AutonTechModel.ShipsX">
+              <MappingFragment StoreEntitySet="ShipsX">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ship_name" ColumnName="ship_name" />
+                <ScalarProperty Name="ship_model" ColumnName="ship_model" />
+                <ScalarProperty Name="ship_type" ColumnName="ship_type" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="weight_kg" ColumnName="weight_kg" />
+                <ScalarProperty Name="year_built" ColumnName="year_built" />
+                <ScalarProperty Name="idImage" ColumnName="idImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AutonTechModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

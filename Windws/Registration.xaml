@@ -36,7 +36,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <TextBlock FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="#EDF4FF" Text="Registration" Grid.Row="0"/>
-                            <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0,25,0,0" HorizontalAlignment="Center">
+                            <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0,15,0,0" HorizontalAlignment="Center">
                                 <TextBox
                      FontSize="15"
                      x:Name="txtLogin"

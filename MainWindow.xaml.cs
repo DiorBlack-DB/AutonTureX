@@ -14,6 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFUIKitProfessional.Themes;
 using WPFUIKitProfessional.Pages;
+using WPFUIKitProfessional.Data.Classes;
+using WPFUIKitProfessional.Data.DBClasses;
+using WPFUIKitProfessional.Data.Model;
+using WPFUIKitProfessional.Windws;
 
 namespace WPFUIKitProfessional
 {
@@ -22,8 +26,10 @@ namespace WPFUIKitProfessional
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public static Account Account;
+        public MainWindow(Account account)
         {
+            Account = account;
             InitializeComponent();
         }
 
@@ -40,8 +46,6 @@ namespace WPFUIKitProfessional
             Close();
         }
 
-        
-
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -49,7 +53,7 @@ namespace WPFUIKitProfessional
 
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
-            frameContent.Navigate(new Home());
+            frameContent.Navigate(new Home(Account));
         }
 
         private void rdAnalytics_Click(object sender, RoutedEventArgs e)
@@ -83,6 +87,13 @@ namespace WPFUIKitProfessional
             {
                 return;
             }
+        }
+
+        private void rdSettings_Click(object sender, RoutedEventArgs e)
+        {
+            Windws.Authorization authorization = new Windws.Authorization();
+            authorization.Show();
+            this.Close();
         }
     }
 }

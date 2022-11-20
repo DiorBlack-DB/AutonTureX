@@ -6,11 +6,71 @@
       xmlns:local="clr-namespace:WPFUIKitProfessional.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="630"
-      Title="Home" FontFamily="Poppins">
+      Title="Home" FontFamily="Poppins"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
-        <StackPanel>
-            
-        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="{Binding Image}" x:Name="imgClien" MouseLeftButtonDown="imgClien_MouseLeftButtonDown" Grid.Column="0" Margin="10"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Margin="15" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBox
+                     IsReadOnly="True"
+                     FontSize="15"
+                     x:Name="txtLogin"
+                     Text="{Binding Authorization.Login}"
+                     Foreground="{DynamicResource PrimaryTextColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="Login" Width="220"/>
+
+                <TextBox
+                     Margin="0,15,0,15"
+                     FontSize="15"
+                     x:Name="txtPassword"
+                     Text="{Binding Authorization.Password}"
+                     Foreground="{DynamicResource PrimaryTextColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="Password" Width="220"/>
+
+                <TextBox
+                     FontSize="15"
+                     x:Name="txtName"
+                     Text="{Binding Name}"
+                     Foreground="{DynamicResource PrimaryTextColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="Name" Width="220"/>
+
+                <TextBox
+                     FontSize="15"
+                     x:Name="txtSurName"
+                     Margin="0,15,0,15"
+                     Text="{Binding Surname}"
+                     Foreground="{DynamicResource PrimaryTextColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="SurName" Width="220"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="10" Grid.Column="0" Margin="10" Orientation="Vertical">
+                <TextBlock Text="Statistics" FontSize="35" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
+                <TextBlock Text="Statistics" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,15,0,0"/>
+                <TextBlock Text="Statistics" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,15,0,15"/>
+                <TextBlock Text="Statistics" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                <Button Content="Edit" Background="#772250"
+                        x:Name="btnEditData"
+                        HorizontalAlignment="Right"
+                        Click="btnEditData_Click"
+                        Margin="0,0,5,5"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+            </StackPanel>
+        </Grid>
     </Border>
 </Page>

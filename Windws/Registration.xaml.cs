@@ -11,6 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFUIKitProfessional.Themes;
+using WPFUIKitProfessional.Pages;
+using WPFUIKitProfessional.Data.Classes;
+using WPFUIKitProfessional.Data.DBClasses;
+using WPFUIKitProfessional.Data.Model;
 
 namespace WPFUIKitProfessional.Windws
 {
@@ -53,7 +58,19 @@ namespace WPFUIKitProfessional.Windws
             }
             else
             {
-
+                if (DBMethodsFromClient.IsCorrectUser(txtLogin.Text, txtPassword.Password) == false)
+                {
+                    DBMethodsFromClient.AddAuthorization(txtLogin.Text, txtPassword.Password);
+                    DBMethodsFromClient.AddClient(txtName.Text);
+                    MainWindow main = new MainWindow(DBMethodsFromClient.Account);
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("user already exists");
+                    return;
+                }
             }
         }
     }
