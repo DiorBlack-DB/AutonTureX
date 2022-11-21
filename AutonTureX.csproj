@@ -118,6 +118,7 @@
     <Compile Include="Data\Classes\APIKEY.cs" />
     <Compile Include="Data\Classes\ConnectMethods.cs" />
     <Compile Include="Data\Classes\DataClasses\ImageGetter.cs" />
+    <Compile Include="Data\Classes\DataClasses\Roadster.cs" />
     <Compile Include="Data\Classes\DataClasses\SpaceXRockets.cs" />
     <Compile Include="Data\Classes\DataClasses\SpaceXShips.cs" />
     <Compile Include="Data\Classes\DefaultValues.cs" />
@@ -203,6 +204,9 @@
     <Compile Include="Pages\CurrentPage\ImagePickerPage.xaml.cs">
       <DependentUpon>ImagePickerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CurrentPage\RoadsterPage.xaml.cs">
+      <DependentUpon>RoadsterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CurrentPage\RocketsXPage.xaml.cs">
       <DependentUpon>RocketsXPage.xaml</DependentUpon>
     </Compile>
@@ -217,6 +221,9 @@
     </Compile>
     <Compile Include="Pages\InformationPage\InformationRocketPage.xaml.cs">
       <DependentUpon>InformationRocketPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InformationPage\InformationShipPage.xaml.cs">
+      <DependentUpon>InformationShipPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\WebBrowserPage.xaml.cs">
       <DependentUpon>WebBrowserPage.xaml</DependentUpon>
@@ -248,6 +255,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CurrentPage\RoadsterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CurrentPage\RocketsXPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -265,6 +276,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\InformationPage\InformationRocketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InformationPage\InformationShipPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

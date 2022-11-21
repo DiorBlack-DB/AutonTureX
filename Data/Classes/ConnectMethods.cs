@@ -48,6 +48,11 @@ namespace WPFUIKitProfessional.Data.Classes
             var photo = JsonConvert.DeserializeObject<DataClasses.ImageGetter>(data.ToString());
             return photo;
         }
+        public static dynamic RoadsterX(dynamic data)
+        {
+            var roadster = JsonConvert.DeserializeObject<DataClasses.Roadster>(data.ToString());
+            return roadster;
+        }
         public static string TranslateText(String fromLang, String toLang, String input)
         {
             DefaultValues.toLang = toLang;

@@ -98,5 +98,10 @@ namespace WPFUIKitProfessional
         {
             frameContent.Navigate(new ImagePickerPage(Account));
         }
+
+        private void rdRoadster_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new RoadsterPage(Account));
+        }
     }
 }
