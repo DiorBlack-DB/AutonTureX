@@ -3,7 +3,7 @@
 # Json File
 add file from `\Resources` to folder `AutonTureX\bin\Debug`
 - Astronaut.json
-- EventPage.json
+- Event.json
 
 # TranslateAPI
 ```
