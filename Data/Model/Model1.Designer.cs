@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\claud\Downloads\WPFUIKitProfessional-main\Data\Model\Model1.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\claud\OneDrive\Документы\GitHub\AutonTureX\Data\Model\Model1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

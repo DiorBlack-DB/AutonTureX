@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e949183ec2814ea2b6856a2c6e135f77" Name="Diagram1">
+      <Diagram DiagramId="dab69cec9bac41d1a6b465846177a5e5" Name="Diagram1">
         <EntityTypeShape EntityType="AutonTechModel.Account" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.Astronaut" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.AstronautFavorite" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />

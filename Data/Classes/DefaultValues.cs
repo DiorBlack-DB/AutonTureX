@@ -17,7 +17,7 @@ namespace WPFUIKitProfessional.Data.Classes
         };
         public static String DefaultCamera = Camera[0];
 
-
+        public static string DefaultSearchFromWiki = "космос";
         public static List<String> language = new List<string>()
         {
             "ru", "en", "zh", "fr", "es", "ar", "aut"

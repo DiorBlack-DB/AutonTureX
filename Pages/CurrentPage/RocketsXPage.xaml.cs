@@ -15,8 +15,11 @@ using System.Windows.Shapes;
 using WPFUIKitProfessional.Data.DBClasses;
 using WPFUIKitProfessional.Data.Classes;
 using WPFUIKitProfessional.Data.Model;
+using WPFUIKitProfessional.Data.Classes.DataClasses;
+using WPFUIKitProfessional.Pages.InformationPage;
+using System.Security.Principal;
 
-namespace WPFUIKitProfessional.Pages
+namespace WPFUIKitProfessional.Pages.CurrentPage
 {
     /// <summary>
     /// Логика взаимодействия для RocketsXPage.xaml
@@ -28,15 +31,19 @@ namespace WPFUIKitProfessional.Pages
         {
             Account = account;
             InitializeComponent();
-            BindingData();
+            SendRequest();
         }
-        private void BindingData()
+        private void SendRequest()
         {
-
+            var request = ConnectMethods.CreateRequest(URLGenerator.SpaceXAllRocket);
+            var rocket = ConnectMethods.RocketsX(request);
+            lstvRocketX.ItemsSource = rocket;
         }
+
         private void lstvRocketX_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var selectRocket = lstvRocketX.SelectedItem as SpaceXRockets.Root;
+            NavigationService.Navigate(new InformationRocketPage(selectRocket));
         }
     }
 }

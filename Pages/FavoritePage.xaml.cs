@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WPFUIKitProfessional.Pages
 {
     /// <summary>
-    /// Lógica de interacción para Users.xaml
+    /// Логика взаимодействия для FavoritePage.xaml
     /// </summary>
-    public partial class Users : Page
+    public partial class FavoritePage : Page
     {
-        public Users()
+        public FavoritePage()
         {
             InitializeComponent();
         }

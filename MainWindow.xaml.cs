@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFUIKitProfessional.Themes;
 using WPFUIKitProfessional.Pages;
+using WPFUIKitProfessional.Pages.CurrentPage;
 using WPFUIKitProfessional.Data.Classes;
 using WPFUIKitProfessional.Data.DBClasses;
 using WPFUIKitProfessional.Data.Model;
@@ -31,6 +32,7 @@ namespace WPFUIKitProfessional
         {
             Account = account;
             InitializeComponent();
+            frameContent.Navigate(new Home(Account));
         }
 
         private void Themes_Click(object sender, RoutedEventArgs e)
@@ -56,26 +58,6 @@ namespace WPFUIKitProfessional
             frameContent.Navigate(new Home(Account));
         }
 
-        private void rdAnalytics_Click(object sender, RoutedEventArgs e)
-        {
-            frameContent.Navigate(new Analytics());
-        }
-
-        private void rdMessages_Click(object sender, RoutedEventArgs e)
-        {
-            frameContent.Navigate(new Messages());
-        }
-
-        private void rdCollections_Click(object sender, RoutedEventArgs e)
-        {
-            frameContent.Navigate(new Collections());
-        }
-
-        private void rdUsers_Click(object sender, RoutedEventArgs e)
-        {
-            frameContent.Navigate(new Users());
-        }
-
         private void home_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -94,6 +76,17 @@ namespace WPFUIKitProfessional
             Windws.Authorization authorization = new Windws.Authorization();
             authorization.Show();
             this.Close();
+        }
+
+        private void rdFavorite_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new Home(Account));
+        }
+
+        private void rdRocketX_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new RocketsXPage(Account));
+            //frameContent.Navigate(new WebBrowserPage());
         }
     }
 }

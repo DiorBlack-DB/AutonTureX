@@ -17,7 +17,8 @@ namespace WPFUIKitProfessional.Data.Classes
         public static String MarsRoverAllPhoto = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" + DefaultValues.DefaultSol + "&api_key=" + APIKEY.NASAKEY;
         public static String MarsRoverSortPhoto = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" + DefaultValues.DefaultDay + "&camera=" + DefaultValues.DefaultCamera + "&api_key=" + APIKEY.NASAKEY;
         public static String RoadsterX = "https://api.spacexdata.com/v3/roadster";
-
+        public static String DefaultWikiSearch = "https://en.wikipedia.org/wiki/" + DefaultValues.DefaultSearchFromWiki;
+        public static String WikiSearch = "https://en.wikipedia.org/wiki/";
         public static String SpaceDevs = "https://thespacedevs.com/llapi";
         public static String local = "https://localhost:7208/WebApplication";
     }
