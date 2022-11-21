@@ -43,6 +43,11 @@ namespace WPFUIKitProfessional.Data.Classes
             string url = URLGenerator.WikiSearch + question;
             return url;
         }
+        public static dynamic DayPhotoReport(dynamic data)
+        {
+            var photo = JsonConvert.DeserializeObject<DataClasses.ImageGetter>(data.ToString());
+            return photo;
+        }
         public static string TranslateText(String fromLang, String toLang, String input)
         {
             DefaultValues.toLang = toLang;

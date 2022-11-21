@@ -22,6 +22,7 @@ namespace WPFUIKitProfessional.Pages.InformationPage
     /// </summary>
     public partial class InformationRocketPage : Page
     {
+        private int count = 0;
         public static SpaceXRockets.Root Rockets;
         public InformationRocketPage(SpaceXRockets.Root rockets)
         {
@@ -35,12 +36,24 @@ namespace WPFUIKitProfessional.Pages.InformationPage
         }
         private void btnWikipedia_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new WebBrowserPage());
+            string path = Rockets.wikipedia;
+            NavigationService.Navigate(new WebBrowserPage(path));
         }
 
         private void btnTranslate_Click(object sender, RoutedEventArgs e)
         {
-
+            count++;
+            string word = txtDescription.Text.ToString();
+            if (count == 1)
+            {
+                string result = ConnectMethods.TranslateText(DefaultValues.fromLang, DefaultValues.toLang, word);
+                txtDescription.Text = result;
+            }
+            else
+            {
+                string result = ConnectMethods.TranslateText(DefaultValues.toLang, DefaultValues.fromLang, word);
+                txtDescription.Text = result;
+            }
         }
     }
 }

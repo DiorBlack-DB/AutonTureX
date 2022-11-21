@@ -88,5 +88,15 @@ namespace WPFUIKitProfessional
             frameContent.Navigate(new RocketsXPage(Account));
             //frameContent.Navigate(new WebBrowserPage());
         }
+
+        private void rdShipsX_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new ShipsXPage(Account));
+        }
+
+        private void rdImage_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new ImagePickerPage(Account));
+        }
     }
 }

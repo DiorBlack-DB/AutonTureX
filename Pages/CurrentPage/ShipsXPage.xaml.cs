@@ -12,20 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFUIKitProfessional.Data.DBClasses;
 using WPFUIKitProfessional.Data.Classes;
+using WPFUIKitProfessional.Data.Model;
+using WPFUIKitProfessional.Data.Classes.DataClasses;
+using WPFUIKitProfessional.Pages.InformationPage;
+using System.Security.Principal;
 
-namespace WPFUIKitProfessional.Pages
+namespace WPFUIKitProfessional.Pages.CurrentPage
 {
     /// <summary>
-    /// Логика взаимодействия для WebBrowserPage.xaml
+    /// Логика взаимодействия для ShipsXPage.xaml
     /// </summary>
-    public partial class WebBrowserPage : Page
+    public partial class ShipsXPage : Page
     {
-        public WebBrowserPage(string path)
+        public static Account Account;
+        public ShipsXPage(Account account)
         {
+            Account = account;
             InitializeComponent();
-            var request = ConnectMethods.SearchRequestFromWiki("абоба");
-            Browser.Address = path;
         }
     }
 }
