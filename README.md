@@ -1,5 +1,10 @@
 # AutonTureX
 
+# Json File
+add file from `\Resources` to folder `AutonTureX\bin\Debug`
+- Astronaut.json
+- EventPage.json
+
 # TranslateAPI
 ```
 public static String Translate(String fromLang, String toLangn, String word)
