@@ -58,9 +58,9 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.ColumnSpan="10" Grid.Column="0" Margin="10" Orientation="Vertical">
                 <TextBlock Text="Statistics" FontSize="35" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextColor}"/>
-                <TextBlock Text="Statistics" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,15,0,0"/>
-                <TextBlock Text="Statistics" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,15,0,15"/>
-                <TextBlock Text="Statistics" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                <TextBlock x:Name="txtRocket" Text="Rocket:" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,15,0,0"/>
+                <TextBlock  x:Name="txtImage" Text="Image:" FontSize="35" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,15,0,15"/>
+                
                 <Button Content="Edit" Background="#772250"
                         x:Name="btnEditData"
                         HorizontalAlignment="Right"

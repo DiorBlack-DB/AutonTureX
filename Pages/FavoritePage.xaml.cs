@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFUIKitProfessional.Data.Classes.DataClasses;
+using WPFUIKitProfessional.Data.Classes;
+using WPFUIKitProfessional.Data.DBClasses;
+using WPFUIKitProfessional.Data.Model;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -20,9 +24,12 @@ namespace WPFUIKitProfessional.Pages
     /// </summary>
     public partial class FavoritePage : Page
     {
-        public FavoritePage()
+        public static Account Account;
+        public FavoritePage(Account account)
         {
+            Account = account;
             InitializeComponent();
+            lstvRocketX.ItemsSource = DBConnection.connect.RocketsXFavorite.Where(f=>f.idClient == Account.id).ToList();
         }
     }
 }

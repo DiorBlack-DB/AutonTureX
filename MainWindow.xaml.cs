@@ -80,7 +80,7 @@ namespace WPFUIKitProfessional
 
         private void rdFavorite_Click(object sender, RoutedEventArgs e)
         {
-            //frameContent.Navigate(new WebBrowserPage(""));
+            frameContent.Navigate(new FavoritePage(Account));
         }
 
         private void rdRocketX_Click(object sender, RoutedEventArgs e)

@@ -38,13 +38,13 @@
 
                     <StackPanel Grid.Row="1">
                         <RadioButton x:Name="rdHome" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 30 0 0" Click="rdHome_Click"/>
-                        <RadioButton x:Name="rdRocketX" Content="Rockets" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 1 0 0" Click="rdRocketX_Click"/>
-                        <RadioButton x:Name="rdShipsX" Content="Ships" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 1 0 0" Click="rdShipsX_Click"/>
-                        <RadioButton x:Name="rdImage" Content="Image Date" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 1 0 0" Click="rdImage_Click"/>
-                        <RadioButton x:Name="rdRoadster" Content="Roadster" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 1 0 0" Click="rdRoadster_Click"/>
-                        <RadioButton x:Name="rdMarsRover" Content="Mars Rover" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 1 0 0" Click="rdMarsRover_Click"/>
-                        <RadioButton x:Name="rdAstronaut" Content="Astronaut" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 1 0 0" Click="rdAstronaut_Click"/>
-                        <RadioButton x:Name="rdContent" Content="Content" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Margin="0 1 0 0" Click="rdContent_Click"/>
+                        <RadioButton x:Name="rdRocketX" Content="Rockets" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource rocket}"  Margin="0 1 0 0" Click="rdRocketX_Click"/>
+                        <RadioButton x:Name="rdShipsX" Content="Ships" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource rocket}" Margin="0 1 0 0" Click="rdShipsX_Click"/>
+                        <RadioButton x:Name="rdImage" Content="Image Date" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource rocket}" Margin="0 1 0 0" Click="rdImage_Click"/>
+                        <RadioButton x:Name="rdRoadster" Content="Roadster" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource rocket}" Margin="0 1 0 0" Click="rdRoadster_Click"/>
+                        <RadioButton x:Name="rdMarsRover" Content="Mars Rover" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource sun}" Margin="0 1 0 0" Click="rdMarsRover_Click"/>
+                        <RadioButton x:Name="rdAstronaut" Content="Astronaut" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource moon}" Margin="0 1 0 0" Click="rdAstronaut_Click"/>
+                        <RadioButton x:Name="rdContent" Content="Content" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource rocket}" Margin="0 1 0 0" Click="rdContent_Click"/>
 
                         <Separator Margin="20 20" Background="{DynamicResource TertiaryBackgroundColor}"/>
                         <RadioButton x:Name="rdFavorite" Content="Favorite" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource collections}" Margin="0 1 0 1" Click="rdFavorite_Click"/>

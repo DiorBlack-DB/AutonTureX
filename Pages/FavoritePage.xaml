@@ -11,6 +11,38 @@
       Title="FavoritePage">
 
     <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="0" x:Name="lstvRocketX" HorizontalContentAlignment="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <material:Card Background="{DynamicResource PrimaryBackgroundColor}">
+                            <StackPanel Width="590" Height="320">
+                                <Grid Height="320">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="1" Margin="10" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding name, StringFormat=Name: {0}}" FontSize="22" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                        <TextBlock Text="{Binding country, StringFormat=Country: {0}}" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,10,0,5"/>
+                                        <TextBlock Text="{Binding cost_per_launch, StringFormat=Price: {0}}" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                        <TextBlock Text="{Binding mass.kg, StringFormat=Mass: {0}}" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,5,0,5"/>
+                                        <TextBlock Text="{Binding boosters, StringFormat=Boosters: {0}}" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    </StackPanel>
+                                    <Image Source="{Binding flickr_images[0]}" Grid.Column="0" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                </Grid>
+                            </StackPanel>
+                        </material:Card>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView Grid.Column="1">
+                
+            </ListView>
+        </Grid>
     </Border>
 </Page>

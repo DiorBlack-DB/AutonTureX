@@ -32,7 +32,9 @@ namespace WPFUIKitProfessional.Pages
         }
         private void BindingData()
         {
-            this.DataContext = Account; 
+            this.DataContext = Account;
+            txtImage.Text = "Image: " + DBConnection.connect.ImageDateFavorite.Where(a => a.idClient == Account.id).Count().ToString();
+            txtRocket.Text = "Rocket: " + DBConnection.connect.RocketsXFavorite.Where(a => a.idClient == Account.id).Count().ToString();
         }
         private void btnEditData_Click(object sender, RoutedEventArgs e)
         {
