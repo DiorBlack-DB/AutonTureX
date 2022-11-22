@@ -26,6 +26,7 @@ namespace WPFUIKitProfessional.Pages.InformationPage
     /// </summary>
     public partial class InformationAstronautPage : Page
     {
+        private int count = 0;
         public static Astronauts.Result Astronaut;
         public InformationAstronautPage(Astronauts.Result astronaut)
         {
@@ -36,7 +37,18 @@ namespace WPFUIKitProfessional.Pages.InformationPage
 
         private void btnTranslate_Click(object sender, RoutedEventArgs e)
         {
-
+            count++;
+            string word = txtbio.Text.ToString();
+            if (count == 1)
+            {
+                string result = ConnectMethods.TranslateText(DefaultValues.fromLang, DefaultValues.toLang, word);
+                txtbio.Text = result;
+            }
+            else
+            {
+                string result = ConnectMethods.TranslateText(DefaultValues.toLang, DefaultValues.fromLang, word);
+                txtbio.Text = result;
+            }
         }
 
         private void btnAddFavorite_Click(object sender, RoutedEventArgs e)
@@ -46,7 +58,12 @@ namespace WPFUIKitProfessional.Pages.InformationPage
 
         private void btnWikipedia_Click(object sender, RoutedEventArgs e)
         {
-
+            string url = Astronaut.wiki;
+            if (url != null)
+            {
+                NavigationService.Navigate(new WebBrowserPage(url));
+            }
+            
         }
     }
 }

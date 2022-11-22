@@ -1,0 +1,54 @@
+﻿<Page x:Class="WPFUIKitProfessional.Pages.ContentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFUIKitProfessional.Pages"
+      mc:Ignorable="d" 
+     FontFamily="Poppins"
+      d:DesignHeight="640" d:DesignWidth="630"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="ContentPage">
+
+    <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Rocket In Cosmos" Background="#772250"
+                        x:Name="btnRocketVideo"
+                        HorizontalAlignment="Right"
+                        Click="btnRocketVideo_Click"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+
+            <Button Content="Rocket Start" Background="#772250"
+                        x:Name="btnRocketStar"
+                        HorizontalAlignment="Right"
+                        Click="btnRocketStar_Click"
+                        Margin="0,25,0,0"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+            <Button Content="Moon View" Background="#772250"
+                        x:Name="btnMoonView"
+                        HorizontalAlignment="Right"
+                        Click="btnMoonView_Click"
+                        Margin="0,25,0,25"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+
+            <Button Content="WorldView" Background="#772250"
+                        x:Name="btnWorldView"
+                        HorizontalAlignment="Right"
+                        Click="btnWorldView_Click"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+
+        </StackPanel>
+    </Border>
+</Page>

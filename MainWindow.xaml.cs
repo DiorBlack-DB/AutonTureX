@@ -112,5 +112,10 @@ namespace WPFUIKitProfessional
         {
             frameContent.Navigate(new AstronautPage(Account));
         }
+
+        private void rdContent_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new ContentPage());
+        }
     }
 }
