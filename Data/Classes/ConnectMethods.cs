@@ -72,6 +72,16 @@ namespace WPFUIKitProfessional.Data.Classes
             if (translation.Length > 1) { translation = translation.Substring(1); };
             return translation;
         }
+        public static dynamic MarsRover(dynamic data)
+        {
+            var rover = JsonConvert.DeserializeObject<DataClasses.MarsRover.Rootobject>(data.ToString());
+            return rover;
+        }
+        public static dynamic Astronaut(JObject data)
+        {
+            var result = JsonConvert.DeserializeObject<Astronauts.Rootobject>(data.ToString());
+            return result;
+        }
         public static dynamic SearchRequestFromWiki(string question)
         {
             string url = URLGenerator.WikiSearch + question;
@@ -86,11 +96,6 @@ namespace WPFUIKitProfessional.Data.Classes
         {
             var roadster = JsonConvert.DeserializeObject<DataClasses.Roadster>(data.ToString());
             return roadster;
-        }
-        public static dynamic Astronaut(JObject data)
-        {
-            var result = JsonConvert.DeserializeObject<Astronauts.Rootobject>(data.ToString());
-            return result;
         }
         public static dynamic RocketsX(dynamic data)
         {

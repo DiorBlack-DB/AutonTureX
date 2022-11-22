@@ -102,5 +102,15 @@ namespace WPFUIKitProfessional
         {
             frameContent.Navigate(new RoadsterPage(Account));
         }
+
+        private void rdMarsRover_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new MarsRoverPage(Account));
+        }
+
+        private void rdAstronaut_Click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Navigate(new AstronautPage(Account));
+        }
     }
 }

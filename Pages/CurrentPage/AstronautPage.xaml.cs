@@ -26,8 +26,10 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
     /// </summary>
     public partial class AstronautPage : Page
     {
-        public AstronautPage()
+        public static Account Account;
+        public AstronautPage(Account account)
         {
+            Account = account;
             InitializeComponent();
             SendRequest();
         }
@@ -35,6 +37,12 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
         {
             var request = ConnectMethods.ReadJsonFile("Astronaut.json");
             var result = ConnectMethods.Astronaut(request);
+        }
+
+        private void lstvAstronaut_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectAstronaut = lstvAstronaut.SelectedItem as Astronauts.Rootobject;
+            NavigationService.Navigate(new InformationAstronautPage(selectAstronaut));
         }
     }
 }

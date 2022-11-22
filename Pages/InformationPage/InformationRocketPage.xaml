@@ -20,7 +20,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Source="{Binding flickr_images[0]}" Grid.Column="0" Margin="10" Grid.Row="0" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <Image x:Name="imgRocket" MouseLeftButtonDown="Image_MouseLeftButtonDown" Source="{Binding flickr_images[0]}" Grid.Column="0" Margin="10" Grid.Row="0" RenderOptions.BitmapScalingMode="HighQuality"/>
             <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
                 <TextBlock Text="{Binding rocket_name}" FontSize="35" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Medium"/>
                 <TextBlock Text="{Binding rocket_type}" FontSize="25" Margin="0,15,0,15" Foreground="{DynamicResource PrimaryTextColor}" />

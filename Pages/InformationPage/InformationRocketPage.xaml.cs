@@ -23,12 +23,17 @@ namespace WPFUIKitProfessional.Pages.InformationPage
     public partial class InformationRocketPage : Page
     {
         private int count = 0;
+        List<String> uriImage;
         public static SpaceXRockets.Root Rockets;
         public InformationRocketPage(SpaceXRockets.Root rockets)
         {
             Rockets = rockets;
             InitializeComponent();
             this.DataContext = Rockets;
+            uriImage = new List<string>()
+            {
+                Rockets.flickr_images[0], Rockets.flickr_images[1]
+            };
         }
         private void btnAddFavorite_Click(object sender, RoutedEventArgs e)
         {
@@ -53,6 +58,27 @@ namespace WPFUIKitProfessional.Pages.InformationPage
             {
                 string result = ConnectMethods.TranslateText(DefaultValues.toLang, DefaultValues.fromLang, word);
                 txtDescription.Text = result;
+            }
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                count++;
+                if (count == 1)
+                {
+                    imgRocket.Source = new BitmapImage(new Uri(uriImage[1], UriKind.RelativeOrAbsolute));
+                }
+                else
+                {
+                    imgRocket.Source = new BitmapImage(new Uri(uriImage[0], UriKind.RelativeOrAbsolute));
+                    count = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("update");
             }
         }
     }

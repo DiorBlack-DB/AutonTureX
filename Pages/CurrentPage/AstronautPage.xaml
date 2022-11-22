@@ -11,6 +11,21 @@
       Title="AstronautPage">
 
     <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
-
+        <ListView x:Name="lstvAstronaut" SelectionChanged="lstvAstronaut_SelectionChanged" HorizontalContentAlignment="Center" Width="610" Height="620">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <material:Card Background="{DynamicResource PrimaryBackgroundColor}" Width="350" Height="370">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="300"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding name}" Foreground="{DynamicResource PrimaryTextColor}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"/>
+                            <Image Grid.Row="0" Source="{Binding profile_image}" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        </Grid>
+                    </material:Card>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Border>
 </Page>
