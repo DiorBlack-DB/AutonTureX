@@ -24,9 +24,8 @@ namespace WPFUIKitProfessional.Data.Model
         public string ship_name { get; set; }
         public string ship_model { get; set; }
         public string ship_type { get; set; }
-        public bool active { get; set; }
-        public Nullable<int> weight_kg { get; set; }
-        public Nullable<int> year_built { get; set; }
+        public string weight_kg { get; set; }
+        public string year_built { get; set; }
         public Nullable<int> idImage { get; set; }
     
         public virtual ImageShipsX ImageShipsX { get; set; }

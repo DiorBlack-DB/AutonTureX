@@ -31,7 +31,7 @@ namespace WPFUIKitProfessional.Data.Model
         public string last_flight { get; set; }
         public string first_flight { get; set; }
         public int flights_count { get; set; }
-        public byte[] profile_image { get; set; }
+        public string profile_image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AstronautFavorite> AstronautFavorite { get; set; }

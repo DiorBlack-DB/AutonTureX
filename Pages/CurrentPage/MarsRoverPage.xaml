@@ -5,11 +5,52 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFUIKitProfessional.Pages.CurrentPage"
       mc:Ignorable="d"
+      FontFamily="Poppins"
       d:DesignHeight="640" d:DesignWidth="630"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="MarsRoverPage">
 
     <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
-       
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      Grid.Row="0"
+                      x:Name="cbSolDay"
+                      SelectionChanged="ComboBox_SelectionChanged"
+                      FontSize="13" Foreground="{DynamicResource PrimaryTextColor}"
+                      Height="50"
+                      Width="220"
+                      material:HintAssist.Hint="Day Sol">
+                <ComboBoxItem
+    Content="2000" />
+                <ComboBoxItem
+    Content="2600" />
+                <ComboBoxItem
+    Content="3000" />
+            </ComboBox>
+            <ListView x:Name="lstvRover" HorizontalContentAlignment="Center" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <material:Card Width="500" Height="250" Background="{DynamicResource PrimaryBackgroundColor}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10">
+                                    <TextBlock Text="{Binding earth_date}" FontWeight="Medium" FontSize="22" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <TextBlock Text="{Binding camera.name, StringFormat=Camera: {0}}" FontWeight="Medium" FontSize="22" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <TextBlock Text="{Binding rover.name}" FontWeight="Medium" FontSize="22" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                </StackPanel>
+                                <Image Grid.Column="0" Source="{Binding img_src}" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </Grid>
+                        </material:Card>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Border>
 </Page>

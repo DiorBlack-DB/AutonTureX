@@ -43,7 +43,7 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
         private void lstvShipsX_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectShip = lstvShipsX.SelectedItem as SpaceXShips.Root;
-            NavigationService.Navigate(new InformationShipPage(selectShip));
+            NavigationService.Navigate(new InformationShipPage(selectShip, Account));
         }
     }
 }

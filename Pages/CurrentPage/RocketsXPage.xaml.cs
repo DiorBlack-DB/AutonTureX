@@ -43,7 +43,7 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
         private void lstvRocketX_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectRocket = lstvRocketX.SelectedItem as SpaceXRockets.Root;
-            NavigationService.Navigate(new InformationRocketPage(selectRocket));
+            NavigationService.Navigate(new InformationRocketPage(selectRocket,Account));
         }
     }
 }

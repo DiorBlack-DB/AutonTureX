@@ -21,8 +21,8 @@ namespace WPFUIKitProfessional.Data.Model
         }
     
         public int id { get; set; }
-        public byte[] flickr_images1 { get; set; }
-        public byte[] flickr_images2 { get; set; }
+        public string flickr_images1 { get; set; }
+        public string flickr_images2 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RocketsX> RocketsX { get; set; }

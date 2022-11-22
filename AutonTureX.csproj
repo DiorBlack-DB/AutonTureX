@@ -127,6 +127,7 @@
     <Compile Include="Data\Classes\URLGenerator.cs" />
     <Compile Include="Data\DBClasses\DBConnection.cs" />
     <Compile Include="Data\DBClasses\DBMethodsFromClient.cs" />
+    <Compile Include="Data\DBClasses\DBMethodsFromFavorite.cs" />
     <Compile Include="Data\DBClasses\DBStatitstics.cs" />
     <Compile Include="Data\Model\Account.cs">
       <DependentUpon>Model1.tt</DependentUpon>

@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFUIKitProfessional.Data.Classes;
 using WPFUIKitProfessional.Data.Classes.DataClasses;
+using WPFUIKitProfessional.Data.DBClasses;
+using WPFUIKitProfessional.Data.Model;
 
 namespace WPFUIKitProfessional.Pages.InformationPage
 {
@@ -25,8 +27,10 @@ namespace WPFUIKitProfessional.Pages.InformationPage
         private int count = 0;
         List<String> uriImage;
         public static SpaceXRockets.Root Rockets;
-        public InformationRocketPage(SpaceXRockets.Root rockets)
+        public static Account Account;
+        public InformationRocketPage(SpaceXRockets.Root rockets,Account account)
         {
+            Account = account;
             Rockets = rockets;
             InitializeComponent();
             this.DataContext = Rockets;
@@ -37,7 +41,9 @@ namespace WPFUIKitProfessional.Pages.InformationPage
         }
         private void btnAddFavorite_Click(object sender, RoutedEventArgs e)
         {
-
+            DBMethodsFromFavorite.AddRocket(Rockets, Rockets.flickr_images[0], Rockets.flickr_images[1]);
+            var getRocket = DBMethodsFromFavorite.GetRocketX(Rockets.rocket_name, Rockets.cost_per_launch);
+            DBMethodsFromFavorite.AddRocketFavorite(getRocket.id, Account.id);
         }
         private void btnWikipedia_Click(object sender, RoutedEventArgs e)
         {

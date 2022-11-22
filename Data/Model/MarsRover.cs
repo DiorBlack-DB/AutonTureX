@@ -23,7 +23,7 @@ namespace WPFUIKitProfessional.Data.Model
         public int id { get; set; }
         public Nullable<int> SolDay { get; set; }
         public Nullable<System.DateTime> earth_date { get; set; }
-        public byte[] img_src { get; set; }
+        public string img_src { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoverFavorite> RoverFavorite { get; set; }

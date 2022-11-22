@@ -21,9 +21,7 @@ namespace WPFUIKitProfessional.Data.Model
         }
     
         public int id { get; set; }
-        public byte[] image1 { get; set; }
-        public byte[] image2 { get; set; }
-        public byte[] image3 { get; set; }
+        public string image1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ShipsX> ShipsX { get; set; }

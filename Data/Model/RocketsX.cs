@@ -23,13 +23,13 @@ namespace WPFUIKitProfessional.Data.Model
         public int id { get; set; }
         public string name { get; set; }
         public string country { get; set; }
-        public string active { get; set; }
-        public string cost_per_launch { get; set; }
+        public bool active { get; set; }
+        public int cost_per_launch { get; set; }
         public string first_flight { get; set; }
-        public string HeightMeters { get; set; }
-        public string DiameterMeters { get; set; }
-        public string mass { get; set; }
-        public string boosters { get; set; }
+        public double HeightMeters { get; set; }
+        public double DiameterMeters { get; set; }
+        public int mass { get; set; }
+        public int boosters { get; set; }
         public string engines { get; set; }
         public Nullable<int> idImage { get; set; }
     

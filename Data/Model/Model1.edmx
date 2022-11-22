@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище AutonTechModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище AutonTechModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="id" />
@@ -30,7 +30,7 @@
           <Property Name="last_flight" Type="nvarchar" MaxLength="50" />
           <Property Name="first_flight" Type="nvarchar" MaxLength="50" />
           <Property Name="flights_count" Type="int" Nullable="false" />
-          <Property Name="profile_image" Type="image" />
+          <Property Name="profile_image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="AstronautFavorite">
           <Key>
@@ -91,28 +91,25 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="flickr_images1" Type="image" />
-          <Property Name="flickr_images2" Type="image" />
-          <Property Name="flickr_images3" Type="image" />
-          <Property Name="flickr_images4" Type="image" />
-          <Property Name="flickr_images5" Type="image" />
+          <Property Name="flickr_images1" Type="nvarchar(max)" />
+          <Property Name="flickr_images2" Type="nvarchar(max)" />
+          <Property Name="flickr_images3" Type="nvarchar(max)" />
+          <Property Name="flickr_images4" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="imageRocketsX">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="flickr_images1" Type="image" />
-          <Property Name="flickr_images2" Type="image" />
+          <Property Name="flickr_images1" Type="nvarchar(max)" />
+          <Property Name="flickr_images2" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ImageShipsX">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="image1" Type="image" />
-          <Property Name="image2" Type="image" />
-          <Property Name="image3" Type="image" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="image1" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="MarsRover">
           <Key>
@@ -121,7 +118,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SolDay" Type="int" />
           <Property Name="earth_date" Type="date" />
-          <Property Name="img_src" Type="image" />
+          <Property Name="img_src" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Roadster">
           <Key>
@@ -152,13 +149,13 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="country" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="active" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="cost_per_launch" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
+          <Property Name="cost_per_launch" Type="int" Nullable="false" />
           <Property Name="first_flight" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="HeightMeters" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DiameterMeters" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="mass" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="boosters" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HeightMeters" Type="float" Nullable="false" />
+          <Property Name="DiameterMeters" Type="float" Nullable="false" />
+          <Property Name="mass" Type="int" Nullable="false" />
+          <Property Name="boosters" Type="int" Nullable="false" />
           <Property Name="engines" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idImage" Type="int" />
         </EntityType>
@@ -191,12 +188,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ship_name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ship_model" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ship_type" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="active" Type="bit" Nullable="false" />
-          <Property Name="weight_kg" Type="int" />
-          <Property Name="year_built" Type="int" />
+          <Property Name="ship_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ship_model" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ship_type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="weight_kg" Type="nvarchar" MaxLength="50" />
+          <Property Name="year_built" Type="nvarchar" MaxLength="50" />
           <Property Name="idImage" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -519,8 +515,7 @@
             <End Role="ShipsX" EntitySet="ShipsX" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AutonTechModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -557,7 +552,7 @@
           <Property Name="last_flight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="first_flight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="flights_count" Type="Int32" Nullable="false" />
-          <Property Name="profile_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="profile_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AstronautFavorite" Relationship="Self.FK_AstronautFavorite_Astronaut" FromRole="Astronaut" ToRole="AstronautFavorite" />
         </EntityType>
         <EntityType Name="AstronautFavorite">
@@ -628,11 +623,10 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="flickr_images1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="flickr_images2" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="flickr_images3" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="flickr_images4" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="flickr_images5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="flickr_images1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="flickr_images2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="flickr_images3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="flickr_images4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Roadster" Relationship="Self.FK_Roadster_ImageRoadster" FromRole="ImageRoadster" ToRole="Roadster" />
         </EntityType>
         <EntityType Name="imageRocketsX">
@@ -640,18 +634,16 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="flickr_images1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="flickr_images2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="flickr_images1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="flickr_images2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="RocketsX" Relationship="Self.FK_RocketsX_imageRocketsX" FromRole="imageRocketsX" ToRole="RocketsX" />
         </EntityType>
         <EntityType Name="ImageShipsX">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="image1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="image2" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="image3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ShipsX" Relationship="Self.FK_ShipsX_ImageShipsX" FromRole="ImageShipsX" ToRole="ShipsX" />
         </EntityType>
         <EntityType Name="MarsRover">
@@ -661,7 +653,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SolDay" Type="Int32" />
           <Property Name="earth_date" Type="DateTime" Precision="0" />
-          <Property Name="img_src" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="img_src" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="RoverFavorite" Relationship="Self.FK_RoverFavorite_MarsRover" FromRole="MarsRover" ToRole="RoverFavorite" />
         </EntityType>
         <EntityType Name="Roadster">
@@ -697,13 +689,13 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="active" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="cost_per_launch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <Property Name="cost_per_launch" Type="Int32" Nullable="false" />
           <Property Name="first_flight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HeightMeters" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DiameterMeters" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="mass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="boosters" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HeightMeters" Type="Double" Nullable="false" />
+          <Property Name="DiameterMeters" Type="Double" Nullable="false" />
+          <Property Name="mass" Type="Int32" Nullable="false" />
+          <Property Name="boosters" Type="Int32" Nullable="false" />
           <Property Name="engines" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="idImage" Type="Int32" />
           <NavigationProperty Name="imageRocketsX" Relationship="Self.FK_RocketsX_imageRocketsX" FromRole="RocketsX" ToRole="imageRocketsX" />
@@ -744,12 +736,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ship_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ship_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ship_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="active" Type="Boolean" Nullable="false" />
-          <Property Name="weight_kg" Type="Int32" />
-          <Property Name="year_built" Type="Int32" />
+          <Property Name="ship_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ship_model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ship_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="weight_kg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year_built" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idImage" Type="Int32" />
           <NavigationProperty Name="ImageShipsX" Relationship="Self.FK_ShipsX_ImageShipsX" FromRole="ShipsX" ToRole="ImageShipsX" />
           <NavigationProperty Name="ShipsFavorite" Relationship="Self.FK_ShipsFavorite_ShipsX" FromRole="ShipsX" ToRole="ShipsFavorite" />
@@ -1177,7 +1168,6 @@
                 <ScalarProperty Name="flickr_images2" ColumnName="flickr_images2" />
                 <ScalarProperty Name="flickr_images3" ColumnName="flickr_images3" />
                 <ScalarProperty Name="flickr_images4" ColumnName="flickr_images4" />
-                <ScalarProperty Name="flickr_images5" ColumnName="flickr_images5" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1195,8 +1185,6 @@
               <MappingFragment StoreEntitySet="ImageShipsX">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="image1" ColumnName="image1" />
-                <ScalarProperty Name="image2" ColumnName="image2" />
-                <ScalarProperty Name="image3" ColumnName="image3" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1286,7 +1274,6 @@
                 <ScalarProperty Name="ship_name" ColumnName="ship_name" />
                 <ScalarProperty Name="ship_model" ColumnName="ship_model" />
                 <ScalarProperty Name="ship_type" ColumnName="ship_type" />
-                <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="weight_kg" ColumnName="weight_kg" />
                 <ScalarProperty Name="year_built" ColumnName="year_built" />
                 <ScalarProperty Name="idImage" ColumnName="idImage" />

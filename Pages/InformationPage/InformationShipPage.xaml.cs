@@ -27,8 +27,10 @@ namespace WPFUIKitProfessional.Pages.InformationPage
     public partial class InformationShipPage : Page
     {
         public static SpaceXShips.Root Ship;
-        public InformationShipPage(SpaceXShips.Root ship)
+        public static Account Account;
+        public InformationShipPage(SpaceXShips.Root ship,Account account)
         {
+            Account = account;
             Ship = ship;
             InitializeComponent();
             this.DataContext = Ship;
@@ -49,7 +51,9 @@ namespace WPFUIKitProfessional.Pages.InformationPage
 
         private void btnAddFavorite_Click(object sender, RoutedEventArgs e)
         {
-
+            //DBMethodsFromFavorite.AddShip(Ship, Ship.image);
+            //var getShip = DBMethodsFromFavorite.GetShipX(Ship.ship_name, Ship.ship_model, Ship.ship_type);
+            //DBMethodsFromFavorite.AddFavoriteShip(getShip.id, Account.id);
         }
     }
 }
