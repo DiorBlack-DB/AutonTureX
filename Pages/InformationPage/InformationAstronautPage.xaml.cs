@@ -26,11 +26,27 @@ namespace WPFUIKitProfessional.Pages.InformationPage
     /// </summary>
     public partial class InformationAstronautPage : Page
     {
-        public static Astronauts.Rootobject Astronaut;
-        public InformationAstronautPage(Astronauts.Rootobject astronaut)
+        public static Astronauts.Result Astronaut;
+        public InformationAstronautPage(Astronauts.Result astronaut)
         {
             Astronaut = astronaut;
             InitializeComponent();
+            this.DataContext = Astronaut;
+        }
+
+        private void btnTranslate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddFavorite_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnWikipedia_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

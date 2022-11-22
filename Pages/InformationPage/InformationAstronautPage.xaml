@@ -11,6 +11,98 @@
       Title="InformationAstronautPage">
 
     <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <material:Card Grid.Column="1" Width="470" Height="470" Background="{DynamicResource PrimaryBackgroundColor}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="5,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <TextBlock Text="{Binding name}" FontSize="22" HorizontalAlignment="Center" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                        <TextBlock Text="{Binding date_of_birth, StringFormat=Birth: {0}}" FontSize="20" FontWeight="Medium" Margin="0,10,0,10" Foreground="{DynamicResource PrimaryTextColor}"/>
+                        <TextBlock Text="{Binding date_of_death, StringFormat=Death: {0}}" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                        <TextBlock Text="{Binding age, StringFormat=Age: {0}}" FontSize="20" FontWeight="Medium" Margin="0,10,0,10" Foreground="{DynamicResource PrimaryTextColor}"/>
+                        <TextBlock Text="{Binding nationality, StringFormat=Nationality: {0}}" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+                        <Grid Height="220">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="Flight" HorizontalAlignment="Center" FontSize="22" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                <TextBlock Text="{Binding last_flight}" FontSize="20" FontWeight="Medium" Margin="0,5,0,5" Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding first_flight}" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding status.name}" FontSize="25" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Content="Translate" Background="#772250"
+                        x:Name="btnTranslate"
+                        HorizontalAlignment="Right"
+                        Click="btnTranslate_Click"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+                        <Button Content="Add Favorite" Background="#772250"
+                        x:Name="btnAddFavorite"
+                        HorizontalAlignment="Right"
+                        Click="btnAddFavorite_Click"
+                        Margin="0,25,0,25"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+
+                        <Button Content="Wikipedia" Background="#772250"
+                        HorizontalAlignment="Right"
+                        x:Name="btnWikipedia"
+                        Click="btnWikipedia_Click"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="220"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+                    </StackPanel>
+                    <Image Source="{Binding profile_image}" Grid.Row="0" Grid.Column="0" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+                </Grid>
+            </material:Card>
+            <Expander
+                       Background="{DynamicResource SecundaryBackgroundColor}"
+                       Grid.Column="0"
+                       ExpandDirection="Right"
+                       material:ExpanderAssist.VerticalHeaderPadding="0,25,0,10">      
+                <Expander.Header>
+                    <TextBlock
+                                     RenderTransformOrigin=".10,.10">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform
+                                            Angle="90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </Expander.Header>
+                <ScrollViewer>
+                    <StackPanel Grid.ColumnSpan="2"
+                                        Orientation="Vertical"
+                                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                                        Margin="10,24,16,24">
+                        <TextBlock Text="{Binding bio}" x:Name="txtbio" TextWrapping="Wrap" FontSize="25" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Expander>
+        </Grid>
     </Border>
 </Page>

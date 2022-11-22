@@ -37,11 +37,12 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
         {
             var request = ConnectMethods.ReadJsonFile("Astronaut.json");
             var result = ConnectMethods.Astronaut(request);
+            lstvAstronaut.ItemsSource = result.results;
         }
 
         private void lstvAstronaut_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectAstronaut = lstvAstronaut.SelectedItem as Astronauts.Rootobject;
+            var selectAstronaut = lstvAstronaut.SelectedItem as Astronauts.Result;
             NavigationService.Navigate(new InformationAstronautPage(selectAstronaut));
         }
     }
