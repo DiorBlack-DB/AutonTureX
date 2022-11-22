@@ -37,7 +37,7 @@ namespace WPFUIKitProfessional.Windws
                 return;
             }
         }
-
+        
         private void txtRegistration_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Registration reg = new Registration();

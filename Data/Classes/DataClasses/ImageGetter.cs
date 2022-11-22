@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFUIKitProfessional.Data.Classes.DataClasses
 {
-    internal class ImageGetter
+    public class ImageGetter
     {
         public string copyright { get; set; }
         public string date { get; set; }

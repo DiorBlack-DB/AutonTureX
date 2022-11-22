@@ -117,6 +117,7 @@
     </ApplicationDefinition>
     <Compile Include="Data\Classes\APIKEY.cs" />
     <Compile Include="Data\Classes\ConnectMethods.cs" />
+    <Compile Include="Data\Classes\DataClasses\Astronauts.cs" />
     <Compile Include="Data\Classes\DataClasses\ImageGetter.cs" />
     <Compile Include="Data\Classes\DataClasses\Roadster.cs" />
     <Compile Include="Data\Classes\DataClasses\SpaceXRockets.cs" />
@@ -201,6 +202,9 @@
     <Compile Include="Data\Model\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CurrentPage\AstronautPage.xaml.cs">
+      <DependentUpon>AstronautPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CurrentPage\ImagePickerPage.xaml.cs">
       <DependentUpon>ImagePickerPage.xaml</DependentUpon>
     </Compile>
@@ -251,6 +255,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\CurrentPage\AstronautPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CurrentPage\ImagePickerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -342,6 +350,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Astronaut.json" />
+    <None Include="Resources\Event.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

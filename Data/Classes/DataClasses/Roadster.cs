@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFUIKitProfessional.Data.Classes.DataClasses
 {
-    internal class Roadster
+    public class Roadster
     {
         public string name { get; set; }
         public DateTime launch_date_utc { get; set; } 

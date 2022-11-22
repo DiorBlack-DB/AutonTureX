@@ -10,7 +10,29 @@
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="ShipsXPage">
 
-    <Grid>
-        
-    </Grid>
+    <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
+        <ListView x:Name="lstvShipsX" HorizontalContentAlignment="Center" SelectionChanged="lstvShipsX_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <material:Card Background="{DynamicResource PrimaryBackgroundColor}">
+                        <StackPanel Width="590" Height="320">
+                            <Grid Height="320">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="1" Margin="10" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding ship_name, StringFormat=Name: {0}}" FontSize="19" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <TextBlock Text="{Binding weight_kg, StringFormat=Weight: {0}}" FontSize="15" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,10,0,5"/>
+                                    <TextBlock Text="{Binding ship_type, StringFormat=Type: {0}}" FontSize="15" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <TextBlock Text="{Binding year_built, StringFormat=Built: {0}}" FontSize="15" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,5,0,5"/>
+                                </StackPanel>
+                                <Image Source="{Binding image}" Grid.Column="0" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </Grid>
+                        </StackPanel>
+                    </material:Card>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Border>
 </Page>

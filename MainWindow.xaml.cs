@@ -80,13 +80,12 @@ namespace WPFUIKitProfessional
 
         private void rdFavorite_Click(object sender, RoutedEventArgs e)
         {
-            frameContent.Navigate(new Home(Account));
+            frameContent.Navigate(new WebBrowserPage("https://www.marinetraffic.com/en/ais/home/shipid:AMERICANISLANDER/zoom:13"));
         }
 
         private void rdRocketX_Click(object sender, RoutedEventArgs e)
         {
             frameContent.Navigate(new RocketsXPage(Account));
-            //frameContent.Navigate(new WebBrowserPage());
         }
 
         private void rdShipsX_Click(object sender, RoutedEventArgs e)

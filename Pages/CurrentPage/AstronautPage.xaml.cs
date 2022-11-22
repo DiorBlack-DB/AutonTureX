@@ -22,27 +22,19 @@ using System.Security.Principal;
 namespace WPFUIKitProfessional.Pages.CurrentPage
 {
     /// <summary>
-    /// Логика взаимодействия для ShipsXPage.xaml
+    /// Логика взаимодействия для AstronautPage.xaml
     /// </summary>
-    public partial class ShipsXPage : Page
+    public partial class AstronautPage : Page
     {
-        public static Account Account;
-        public ShipsXPage(Account account)
+        public AstronautPage()
         {
-            Account = account;
             InitializeComponent();
             SendRequest();
         }
         private void SendRequest()
         {
-            var request = ConnectMethods.CreateRequest(URLGenerator.SpaceXAllShips);
-            var result = ConnectMethods.ShipsX(request);
-            lstvShipsX.ItemsSource = result;
-        }
-
-        private void lstvShipsX_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            var request = ConnectMethods.ReadJsonFile("Astronaut.json");
+            var result = ConnectMethods.Astronaut(request);
         }
     }
 }

@@ -38,20 +38,16 @@ namespace WPFUIKitProfessional.Data.Classes
             dynamic data = JsonConvert.DeserializeObject(sReadData);
             return data;
         }
-        public static dynamic SearchRequestFromWiki(string question)
+        public static JObject ReadJsonFile(string url)
         {
-            string url = URLGenerator.WikiSearch + question;
-            return url;
-        }
-        public static dynamic DayPhotoReport(dynamic data)
-        {
-            var photo = JsonConvert.DeserializeObject<DataClasses.ImageGetter>(data.ToString());
-            return photo;
-        }
-        public static dynamic RoadsterX(dynamic data)
-        {
-            var roadster = JsonConvert.DeserializeObject<DataClasses.Roadster>(data.ToString());
-            return roadster;
+
+            JObject o2;
+            using (StreamReader file = File.OpenText(url))
+            using (JsonTextReader reader = new JsonTextReader(file))
+            {
+                o2 = (JObject)JToken.ReadFrom(reader);
+            }
+            return o2;
         }
         public static string TranslateText(String fromLang, String toLang, String input)
         {
@@ -76,15 +72,25 @@ namespace WPFUIKitProfessional.Data.Classes
             if (translation.Length > 1) { translation = translation.Substring(1); };
             return translation;
         }
-        public static JObject ReadJsonFile(string url)
+        public static dynamic SearchRequestFromWiki(string question)
         {
-            JObject o2;
-            using (StreamReader file = File.OpenText(url))
-            using (JsonTextReader reader = new JsonTextReader(file))
-            {
-                o2 = (JObject)JToken.ReadFrom(reader);
-            }
-            return o2;
+            string url = URLGenerator.WikiSearch + question;
+            return url;
+        }
+        public static dynamic DayPhotoReport(dynamic data)
+        {
+            var photo = JsonConvert.DeserializeObject<DataClasses.ImageGetter>(data.ToString());
+            return photo;
+        }
+        public static dynamic RoadsterX(dynamic data)
+        {
+            var roadster = JsonConvert.DeserializeObject<DataClasses.Roadster>(data.ToString());
+            return roadster;
+        }
+        public static dynamic Astronaut(JObject data)
+        {
+            var result = JsonConvert.DeserializeObject<Astronauts.Rootobject>(data.ToString());
+            return result;
         }
         public static dynamic RocketsX(dynamic data)
         {
