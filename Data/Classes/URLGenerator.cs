@@ -21,7 +21,7 @@ namespace WPFUIKitProfessional.Data.Classes
         public static String WikiSearch = "https://en.wikipedia.org/wiki/";
         public static String SpaceDevs = "https://thespacedevs.com/llapi";
         public static String local = "https://localhost:7208/WebApplication";
-
+        public static String TraceShips = "https://www.marinetraffic.com/en/ais/home/" + DefaultValues.DefaultidShip + "/zoom:13";
         public static String Visual = "https://images-assets.nasa.gov/video/BR__CLIP_CS_ICPS_ISO_Artemis_I_Launch_Rocket_Cam_RAW_2-_1723357/BR__CLIP_CS_ICPS_ISO_Artemis_I_Launch_Rocket_Cam_RAW_2-_1723357~orig.mp4";
         public static String VisualOne = "https://images-assets.nasa.gov/video/Artemis%20I%20Launch%202022%20CU%20tracking%20from%20Press%20Site_compressed/Artemis%20I%20Launch%202022%20CU%20tracking%20from%20Press%20Site_compressed~orig.mp4";
         public static String VisualTwo = "https://api.nasa.gov/mars-wmts/catalog/ESP_040776_2115_RED_A_01_ORTHO.html";

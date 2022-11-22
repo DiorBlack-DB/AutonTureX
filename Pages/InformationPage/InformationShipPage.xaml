@@ -14,8 +14,62 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="220"/>
             </Grid.ColumnDefinitions>
+            <ListView x:Name="lstvMission" Grid.Column="1" Margin="10" HorizontalContentAlignment="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <material:Card Width="160" Height="180" Background="{DynamicResource PrimaryBackgroundColor}">
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding name}" FontSize="18" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                <TextBlock Text="{Binding flight, StringFormat=Flight: {0}}" FontSize="18" HorizontalAlignment="Center" Margin="0,15,0,0" Foreground="{DynamicResource PrimaryTextColor}"/>
+                            </StackPanel>
+                        </material:Card>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Column="0" Margin="10">
+                <Grid Height="620">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <Grid Height="310">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding image}"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="{Binding ship_name}" FontWeight="Medium" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}"/>
+                        <TextBlock Text="{Binding home_port, StringFormat=HomePort: {0}}"  FontSize="20" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,10,0,10"/>
+                        <TextBlock Text="{Binding weight_kg, StringFormat=Weight: {0}}"  FontSize="20" Foreground="{DynamicResource PrimaryTextColor}" />
+                        <TextBlock Text="{Binding ship_type, StringFormat=Type: {0}}"  FontSize="20" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,10,0,10"/>
+                        <TextBlock Text="{Binding year_built, StringFormat=Year: {0}}"  FontSize="20" Foreground="{DynamicResource PrimaryTextColor}"/>
+                        <StackPanel Orientation="Horizontal" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Button Content="Add Favorite" Background="#772250"
+                        x:Name="btnAddFavorite"
+                        Click="btnAddFavorite_Click"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="180"
+                        Margin="0,0,10,0"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+                            <Button Content="Trace" Background="#772250"
+                        x:Name="btnTrace"
+                        Click="btnTrace_Click"
+                        material:ButtonAssist.CornerRadius="5"
+                        Width="180"
+                        Margin="10,0,0,0"
+                        Height="40"
+                        Foreground="{DynamicResource SecundaryWhiteColor}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
         </Grid>
     </Border>
 </Page>

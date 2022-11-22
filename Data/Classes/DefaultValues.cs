@@ -11,6 +11,8 @@ namespace WPFUIKitProfessional.Data.Classes
     internal class DefaultValues
     {
         public static String DefaultDay = "2012-02-12";
+
+        public static String DefaultidShip = "shipid:430027";
         public static List<String> Camera = new List<string>()
         {
             "RHAZ", "FHAZ", "MARDI", "CHEMCAM",
