@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4b5e330f683d42c0b501de357a269407" Name="Diagram1">
+      <Diagram DiagramId="918e755ee5c24706aaf5f3db4a9f5214" Name="Diagram1">
         <EntityTypeShape EntityType="AutonTechModel.Account" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.Astronaut" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.AstronautFavorite" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
@@ -15,7 +15,7 @@
         <EntityTypeShape EntityType="AutonTechModel.ImageGetter" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.ImageRoadster" Width="1.5" PointX="3.75" PointY="28" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.imageRocketsX" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutonTechModel.ImageShipsX" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutonTechModel.ImageShipsX" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.MarsRover" Width="1.5" PointX="6" PointY="22" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.Roadster" Width="1.5" PointX="6" PointY="27.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.RoadsterFavorite" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
@@ -23,7 +23,7 @@
         <EntityTypeShape EntityType="AutonTechModel.RocketsXFavorite" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.RoverFavorite" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.ShipsFavorite" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutonTechModel.ShipsX" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutonTechModel.ShipsX" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="AutonTechModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
         <AssociationConnector Association="AutonTechModel.FK_Account_Authorization" ManuallyRouted="false" />
         <AssociationConnector Association="AutonTechModel.FK_AstronautFavorite_Account" ManuallyRouted="false" />

@@ -31,6 +31,7 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
         private string Month = null;
         private string Day = null;
         public static Account Account;
+        dynamic data;
         public ImagePickerPage(Account account)
         {
             Account = account;
@@ -48,7 +49,7 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
                 txtTitle.Text = photo.title;
                 ExplanationTxt.Text = photo.explanation;
                 ImgCosmos.Source = new BitmapImage(new Uri(photo.hdurl, UriKind.RelativeOrAbsolute));
-
+                data = photo;
             }
             catch (Exception ex)
             {
@@ -71,7 +72,30 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
 
         private void btnAddFavorite_Click(object sender, RoutedEventArgs e)
         {
-
+            var getimage = DBMethodsFromFavorite.GetImageGetter(data.date);
+            if (getimage == null)
+            {
+                Data.Model.ImageGetter imageGetter = new Data.Model.ImageGetter
+                {
+                    date = data.date,
+                    image = data.hdurl,
+                    media_type = data.media_type,
+                    title = data.title
+                };
+                DBConnection.connect.ImageGetter.Add(imageGetter);
+                DBConnection.connect.SaveChanges();
+            }
+            if (getimage!= null)
+            {
+                ImageDateFavorite favorite = new ImageDateFavorite
+                {
+                    idClient = Account.id,
+                    idImage = getimage.id
+                };
+                DBConnection.connect.ImageDateFavorite.Add(favorite);
+                DBConnection.connect.SaveChanges();
+            }
+            
         }
 
         private void btnTranslate_Click(object sender, RoutedEventArgs e)

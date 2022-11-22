@@ -64,6 +64,14 @@ namespace WPFUIKitProfessional.Data.DBClasses
         {
             return GetShipsX().FirstOrDefault(s=>s.ship_name == name && s.ship_type == ship_type && s.ship_model == ship_model);
         }
+        public static Model.ImageGetter GetImageGetter(string date)
+        {
+            return GetDateImage().FirstOrDefault(i=>i.date == date);
+        }
+        public static ImageDateFavorite GetImageDateFavorite(int idImage, int idClient)
+        {
+            return GetImageDateFavorite().FirstOrDefault(i => i.idClient == idClient && i.idImage == idImage);
+        }
         public static ShipsFavorite GetShipFavorite(int idClient, int idShip)
         {
             return GetShipsXFavorites().FirstOrDefault(f=>f.idShips == idShip && f.idClient == idClient);
