@@ -1,0 +1,45 @@
+﻿<Page x:Class="WPFUIKitProfessional.Pages.Favorite.ImageFavorite"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFUIKitProfessional.Pages.Favorite"
+      mc:Ignorable="d" 
+      FontFamily="Poppins"
+      d:DesignHeight="640" d:DesignWidth="630"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="ImageFavorite">
+
+    <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="120">
+                <material:Card Background="{DynamicResource PrimaryBackgroundColor}" HorizontalContentAlignment="Center" Width="165" Height="55" VerticalContentAlignment="Center" Margin="0,35,0,0">
+                    <DatePicker HorizontalContentAlignment="Center" FontWeight="Medium" Foreground="{DynamicResource PrimaryTextColor}" FontSize="20" DisplayDateStart="1996-07-16"  HorizontalAlignment="Center"  x:Name="DPSelect" SelectedDateChanged="DPSelect_SelectedDateChanged" Width="160"/>
+                </material:Card>
+            </StackPanel>
+            <ListView x:Name="lstvImage" Grid.Column="1" HorizontalContentAlignment="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <material:Card Width="350" Height="425" Background="{DynamicResource PrimaryBackgroundColor}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="1" Margin="10" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding ImageGetter.date}" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <TextBlock Text="{Binding ImageGetter.media_type}" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                </StackPanel>
+                                <Image Grid.Row="0" Margin="10" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding ImageGetter.image}"/>
+                            </Grid>
+                        </material:Card>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Border>
+</Page>

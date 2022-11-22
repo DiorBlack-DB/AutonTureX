@@ -228,6 +228,12 @@
     <Compile Include="Pages\FavoritePage.xaml.cs">
       <DependentUpon>FavoritePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Favorite\ImageFavorite.xaml.cs">
+      <DependentUpon>ImageFavorite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Favorite\RocketFavoritePage.xaml.cs">
+      <DependentUpon>RocketFavoritePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -295,6 +301,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\FavoritePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Favorite\ImageFavorite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Favorite\RocketFavoritePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

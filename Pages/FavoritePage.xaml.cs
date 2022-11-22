@@ -16,6 +16,7 @@ using WPFUIKitProfessional.Data.Classes.DataClasses;
 using WPFUIKitProfessional.Data.Classes;
 using WPFUIKitProfessional.Data.DBClasses;
 using WPFUIKitProfessional.Data.Model;
+using WPFUIKitProfessional.Pages.Favorite;
 
 namespace WPFUIKitProfessional.Pages
 {
@@ -29,7 +30,16 @@ namespace WPFUIKitProfessional.Pages
         {
             Account = account;
             InitializeComponent();
-            lstvRocketX.ItemsSource = DBConnection.connect.RocketsXFavorite.Where(f=>f.idClient == Account.id).ToList();
+            
+        }
+        private void btnFavoriteImage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ImageFavorite(Account));
+        }
+
+        private void btnFavoriteRocket_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RocketFavoritePage(Account));
         }
     }
 }

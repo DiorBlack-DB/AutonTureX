@@ -1,0 +1,60 @@
+﻿<Page x:Class="WPFUIKitProfessional.Pages.Favorite.RocketFavoritePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFUIKitProfessional.Pages.Favorite"
+      mc:Ignorable="d" 
+      FontFamily="Poppins"
+      d:DesignHeight="640" d:DesignWidth="630"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="RocketFavoritePage">
+    <Border CornerRadius="8" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="1" x:Name="lstvRocketX" HorizontalContentAlignment="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <material:Card Background="{DynamicResource PrimaryBackgroundColor}" Width="320" Height="350">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="200"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Image Margin="10" Grid.Row="0" Source="{Binding RocketsX.imageRocketsX.flickr_images1}"/>
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock Text="{Binding RocketsX.name}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <TextBlock Text="{Binding RocketsX.mass}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}" Margin="0,10,0,10"/>
+                                    <TextBlock Text="{Binding RocketsX.cost_per_launch}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                </StackPanel>
+                            </Grid>
+                        </material:Card>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Column="0" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBox
+                     FontSize="15"
+                     TextChanged="txtName_TextChanged"
+                     x:Name="txtName"
+                     Text="{Binding Name}"
+                     Foreground="{DynamicResource PrimaryTextColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="Name" Width="220"/>
+
+                <TextBox
+                     TextChanged="txtCountry_TextChanged"
+                     FontSize="15"
+                     x:Name="txtCountry"
+                     Margin="0,15,0,0"
+                     Text="{Binding Name}"
+                     Foreground="{DynamicResource PrimaryTextColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     material:HintAssist.Hint="Country" Width="220"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

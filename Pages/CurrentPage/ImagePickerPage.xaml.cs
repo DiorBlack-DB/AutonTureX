@@ -85,17 +85,14 @@ namespace WPFUIKitProfessional.Pages.CurrentPage
                 DBConnection.connect.ImageGetter.Add(imageGetter);
                 DBConnection.connect.SaveChanges();
             }
-            if (getimage!= null)
+            var getimages = DBMethodsFromFavorite.GetImageGetter(data.date);
+            ImageDateFavorite favorite = new ImageDateFavorite
             {
-                ImageDateFavorite favorite = new ImageDateFavorite
-                {
-                    idClient = Account.id,
-                    idImage = getimage.id
-                };
-                DBConnection.connect.ImageDateFavorite.Add(favorite);
-                DBConnection.connect.SaveChanges();
-            }
-            
+                idClient = Account.id,
+                idImage = getimages.id
+            };
+            DBConnection.connect.ImageDateFavorite.Add(favorite);
+            DBConnection.connect.SaveChanges();
         }
 
         private void btnTranslate_Click(object sender, RoutedEventArgs e)
