@@ -16,18 +16,21 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="220"/>
             </Grid.ColumnDefinitions>
-            <ListView x:Name="lstvMission" Grid.Column="1" Margin="10" HorizontalContentAlignment="Center">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <material:Card Width="160" Height="180" Background="{DynamicResource PrimaryBackgroundColor}">
-                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <TextBlock Text="{Binding name}" FontSize="18" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}"/>
-                                <TextBlock Text="{Binding flight, StringFormat=Flight: {0}}" FontSize="18" HorizontalAlignment="Center" Margin="0,15,0,0" Foreground="{DynamicResource PrimaryTextColor}"/>
-                            </StackPanel>
-                        </material:Card>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Missions" HorizontalAlignment="Center" FontSize="25"/>
+                <ListView x:Name="lstvMission"  Margin="10" HorizontalContentAlignment="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <material:Card Width="160" Height="180" Background="{DynamicResource PrimaryBackgroundColor}">
+                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding name}" FontSize="18" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                    <TextBlock Text="{Binding flight, StringFormat=Flight: {0}}" FontSize="18" HorizontalAlignment="Center" Margin="0,15,0,0" Foreground="{DynamicResource PrimaryTextColor}"/>
+                                </StackPanel>
+                            </material:Card>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
             <StackPanel Grid.Column="0" Margin="10">
                 <Grid Height="620">
                     <Grid.RowDefinitions>

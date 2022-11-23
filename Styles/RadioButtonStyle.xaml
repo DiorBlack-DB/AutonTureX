@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- Start: VerticalMenuStyle -->
+   
     <Style x:Key="MenuRadioButtonStyle" TargetType="{x:Type RadioButton}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"/>
@@ -20,14 +20,13 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <!-- Selected  -->
                             <Border x:Name="btnSelected"
                                         Grid.ColumnSpan="2"
                                         CornerRadius="10"
                                         Width="225" HorizontalAlignment="Right">
                             </Border>
 
-                            <!-- Indicator -->
+                            
                             <Rectangle Name="Indicator"
                                            HorizontalAlignment="Left"
                                            Width="6" Height="25"
@@ -42,13 +41,13 @@
                                 </Rectangle.BitmapEffect>
                             </Rectangle>
 
-                            <!-- Icon -->
+                           
                             <Path x:Name="Icon" Data="{Binding Tag,
                                       RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
                                       Height="24" Width="24"
                                       Stretch="None" Fill="{DynamicResource PrimaryTextColor}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 5 0"/>
 
-                            <!-- Text -->
+                           
                             <TextBlock x:Name="txtName" HorizontalAlignment="Left"
                                            VerticalAlignment="Center" Margin="12 0 0 0"
                                            Grid.Column="1" Text="{TemplateBinding Content}"
@@ -74,9 +73,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- End: VerticalMenuStyle -->
-
-    <!-- Start: ToggleButtonStyle -->
+  
     <Style x:Key="ToggleButtonStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Background" Value="{DynamicResource SecundaryWhiteColor}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryWhiteColor}"/>
@@ -95,10 +92,7 @@
                                 Width="35"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center">
-                            <!-- Optional -->
-                            <!--<Border.Effect>
-                                <DropShadowEffect ShadowDepth="0.5" Opacity=".2"/>
-                            </Border.Effect>-->
+                        
                         </Border>
                         <Ellipse x:Name="Ellipse"
                                      Height="20"
@@ -108,14 +102,11 @@
                                      Fill="{DynamicResource TertiaryWhiteColor}"
                                      Stroke="{TemplateBinding BorderBrush}"
                                      StrokeThickness="3">
-                            <!-- Optional -->
-                            <!--<Ellipse.Effect>
-                                <DropShadowEffect ShadowDepth="0.5" Opacity=".2"/>
-                            </Ellipse.Effect>-->
+                         
                         </Ellipse>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <!-- EventTrigger Checked -->
+                      
                         <EventTrigger RoutedEvent="Checked">
                             <BeginStoryboard>
                                 <Storyboard>
@@ -128,7 +119,7 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
-                        <!-- EventTrigger UnChecked -->
+                      
                         <EventTrigger RoutedEvent="Unchecked">
                             <BeginStoryboard>
                                 <Storyboard>
@@ -155,6 +146,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- End: ToggleButtonStyle -->
+   
     
 </ResourceDictionary>
