@@ -4,6 +4,7 @@
 add file from `\Resources` to folder `AutonTureX\bin\Debug`
 - Astronaut.json
 - Event.json
+- account.png
 
 # TranslateAPI
 ```
